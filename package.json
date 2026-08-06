@@ -1,0 +1,50 @@
+{
+  "name": "@iamnnort/toolsy-sdk",
+  "version": "1.0.0",
+  "description": "Toolsy SDK for Node.js - Fast - Interactive - Simple",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamnnort/toolsy-sdk.git"
+  },
+  "bugs": "https://github.com/iamnnort/toolsy-sdk/issues",
+  "homepage": "https://github.com/iamnnort/toolsy-sdk#readme",
+  "keywords": [
+    "toolsy",
+    "sdk",
+    "client",
+    "api"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "yarn build && yarn --cwd ./example start",
+    "build": "tsup",
+    "deploy": "npm publish",
+    "lint": "eslint --fix",
+    "format": "prettier --write . --ignore-path .gitignore",
+    "test": "yarn lint",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@iamnnort/config": "^2.0.4",
+    "@iamnnort/request": "^3.1.6",
+    "@nestjs/common": "^11.1.28"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.15.47",
+    "@types/node": "^25.2.3",
+    "eslint": "^9.24.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "prettier": "^3.8.1",
+    "tsup": "^8.4.0",
+    "typescript": "^5.9.3"
+  }
+}

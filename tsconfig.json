@@ -1,0 +1,6 @@
+{
+  "extends": "@iamnnort/config/tsconfig/node.json",
+  "compilerOptions": {
+    "baseUrl": "./"
+  }
+}

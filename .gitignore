@@ -1,0 +1,17 @@
+# output
+dist
+node_modules
+*.tsbuildinfo
+
+# logs
+*.log
+
+# os
+.DS_Store
+
+# tests
+coverage
+
+# editors
+.idea
+.vscode
