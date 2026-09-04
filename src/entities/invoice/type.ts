@@ -1,4 +1,5 @@
 import { Entity } from '../__entity/type';
+import { SubscriptionPlan } from '../subscription-plan/type';
 
 export type Invoice = Entity & {
   status: InvoiceStatuses;
@@ -13,6 +14,7 @@ export type Invoice = Entity & {
   comment: string;
   checkoutUrl: string;
   source: InvoiceSources;
+  subscriptionPlan: SubscriptionPlan;
 };
 
 export enum InvoiceStatuses {

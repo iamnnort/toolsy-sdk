@@ -17,6 +17,7 @@ export const apiConfig = () => {
       },
       subscriptionPlan: {
         default: 'subscription-plans',
+        paymentSystem: 'payment-systems',
       },
       paymentSystem: {
         default: 'payment-systems',
@@ -25,6 +26,9 @@ export const apiConfig = () => {
       },
       billingPlan: {
         default: 'billing-plans',
+      },
+      content: {
+        default: 'contents',
       },
       donate: {
         default: 'donates',

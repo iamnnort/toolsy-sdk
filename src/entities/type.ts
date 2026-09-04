@@ -12,6 +12,7 @@ export * from './product/type';
 export * from './subscription-plan/type';
 export * from './payment-system/type';
 export * from './billing-plan/type';
+export * from './content/type';
 export * from './donate/type';
 export * from './invoice/type';
 export * from './marketing-program/type';

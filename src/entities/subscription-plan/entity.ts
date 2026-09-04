@@ -4,6 +4,7 @@ import { EntityDto } from '../type';
 import { subscriptionPlanSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { NumberBuilder } from '../__number';
+import { DateBuilder } from '../__date';
 import { EnumBuilder } from '../__enum';
 import { PriceBuilder } from '../__price';
 import { CurrencyBuilder } from '../currency';
@@ -26,6 +27,14 @@ export class SubscriptionPlanEntity extends EntityEntity<SubscriptionPlan> {
 
   isInfinite() {
     return this.entity.isInfinite;
+  }
+
+  getClosesAt() {
+    return DateBuilder.make(this.entity.closesAt, this.dto);
+  }
+
+  getSubscriberLimit() {
+    return NumberBuilder.make(this.entity.subscriberLimit);
   }
 
   getInterval() {

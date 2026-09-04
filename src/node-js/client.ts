@@ -2,6 +2,7 @@ import { ToolsyClientConfig } from './types';
 import {
   BillingPlanDataSource,
   ClientDataSource,
+  ContentDataSource,
   CurrencyDataSource,
   DonateDataSource,
   InvoiceDataSource,
@@ -23,6 +24,8 @@ export class ToolsyClient {
   billingPlan: BillingPlanDataSource;
 
   client: ClientDataSource;
+
+  content: ContentDataSource;
 
   currency: CurrencyDataSource;
 
@@ -57,6 +60,7 @@ export class ToolsyClient {
   constructor(config: ToolsyClientConfig) {
     this.billingPlan = new BillingPlanDataSource(config);
     this.client = new ClientDataSource(config);
+    this.content = new ContentDataSource(config);
     this.currency = new CurrencyDataSource(config);
     this.donate = new DonateDataSource(config);
     this.invoice = new InvoiceDataSource(config);

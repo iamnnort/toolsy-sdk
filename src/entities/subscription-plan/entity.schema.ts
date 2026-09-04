@@ -8,6 +8,8 @@ export const subscriptionPlanSchema = entitySchema.extend({
   name: z.string().catch(''),
   price: z.number().catch(0),
   isInfinite: z.boolean().catch(false),
+  closesAt: z.string().catch(''),
+  subscriberLimit: z.number().catch(0),
   interval: z.enum(Intervals).catch('' as Intervals),
   intervalCount: z.number().catch(0),
   access: z.enum(SubscriptionPlanAccesses).catch('' as SubscriptionPlanAccesses),

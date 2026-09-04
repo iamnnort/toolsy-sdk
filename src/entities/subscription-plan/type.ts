@@ -7,6 +7,8 @@ export type SubscriptionPlan = Entity & {
   name: string;
   price: number;
   isInfinite: boolean;
+  closesAt: string;
+  subscriberLimit: number;
   interval: Intervals;
   intervalCount: number;
   access: SubscriptionPlanAccesses;

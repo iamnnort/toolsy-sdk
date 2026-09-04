@@ -5,6 +5,7 @@ export * from './subscription-plan/dto';
 export * from './payment-system/dto';
 export * from './billing-plan/dto';
 export * from './client/dto';
+export * from './content/dto';
 export * from './donate/dto';
 export * from './invoice/dto';
 export * from './marketing-program/dto';

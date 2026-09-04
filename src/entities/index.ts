@@ -6,6 +6,7 @@ export * from './product';
 export * from './subscription-plan';
 export * from './payment-system';
 export * from './billing-plan';
+export * from './content';
 export * from './donate';
 export * from './invoice';
 export * from './marketing-program';
