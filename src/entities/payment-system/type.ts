@@ -1,10 +1,12 @@
 import { Entity } from '../__entity/type';
+import { Project } from '../project/type';
 
 export type PaymentSystem = Entity & {
   name: string;
   provider: PaymentSystemProviders;
   taxation: TaxationSystems;
   vat: Vats;
+  project: Project;
 };
 
 export enum PaymentSystemProviders {

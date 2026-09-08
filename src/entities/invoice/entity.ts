@@ -5,7 +5,6 @@ import { invoiceSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { NumberBuilder } from '../__number';
 import { EnumBuilder } from '../__enum';
-import { SubscriptionPlanBuilder } from '../subscription-plan';
 
 export class InvoiceEntity extends EntityEntity<Invoice> {
   constructor(entity?: Partial<Invoice>, entityDto: EntityDto = {}) {
@@ -58,9 +57,5 @@ export class InvoiceEntity extends EntityEntity<Invoice> {
 
   getSource() {
     return EnumBuilder.make(this.entity.source);
-  }
-
-  getSubscriptionPlan() {
-    return SubscriptionPlanBuilder.make(this.entity.subscriptionPlan, this.dto);
   }
 }

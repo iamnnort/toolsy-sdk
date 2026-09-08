@@ -1,0 +1,29 @@
+import { Notification } from '@src/entities/notification/type';
+import { CreateDto, SearchDto, SearchField, UpdateDto } from '@src/types/dto';
+
+export type NotificationSearchDto = SearchDto<Notification, 'type' | 'event'> & {
+  projectId?: SearchField<string>;
+  productId?: SearchField<string>;
+  funnelId?: SearchField<string>;
+};
+
+export type NotificationCreateDto = CreateDto<
+  Notification,
+  'type' | 'name',
+  'lifecycle' | 'event' | 'offset' | 'isProtectedContent' | 'isLinkPreviewEnabled'
+> &
+  (
+    | {
+        productId: string;
+        funnelId?: string;
+      }
+    | {
+        productId?: string;
+        funnelId: string;
+      }
+  );
+
+export type NotificationUpdateDto = UpdateDto<
+  Notification,
+  'name' | 'lifecycle' | 'offset' | 'isProtectedContent' | 'isLinkPreviewEnabled'
+>;

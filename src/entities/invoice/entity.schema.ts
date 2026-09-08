@@ -1,7 +1,6 @@
 import { z } from 'zod';
 import { entitySchema } from '../__entity/entity.schema';
 import { InvoiceStatuses, InvoiceSources } from './type';
-import { subscriptionPlanSchema } from '../subscription-plan/entity.schema';
 
 export const invoiceSchema = entitySchema.extend({
   status: z.enum(InvoiceStatuses).catch('' as InvoiceStatuses),
@@ -16,5 +15,4 @@ export const invoiceSchema = entitySchema.extend({
   comment: z.string().catch(''),
   checkoutUrl: z.string().catch(''),
   source: z.enum(InvoiceSources).catch('' as InvoiceSources),
-  subscriptionPlan: subscriptionPlanSchema.catch(() => subscriptionPlanSchema.parse({})),
 });

@@ -30,8 +30,15 @@ export const apiConfig = () => {
       content: {
         default: 'contents',
       },
+      contentButton: {
+        default: 'content-buttons',
+        tag: 'tags',
+      },
       donate: {
         default: 'donates',
+      },
+      funnel: {
+        default: 'funnels',
       },
       invoice: {
         default: 'invoices',
@@ -42,6 +49,9 @@ export const apiConfig = () => {
       },
       message: {
         default: 'messages',
+      },
+      notification: {
+        default: 'notifications',
       },
       payment: {
         default: 'payments',
@@ -54,6 +64,9 @@ export const apiConfig = () => {
       },
       subscription: {
         default: 'subscriptions',
+      },
+      tag: {
+        default: 'tags',
       },
       visit: {
         default: 'visits',
