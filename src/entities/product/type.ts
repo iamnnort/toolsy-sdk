@@ -1,4 +1,5 @@
 import { Entity } from '../__entity/type';
+import { Content } from '../content/type';
 import { Project } from '../project/type';
 
 export type Product = Entity & {
@@ -6,6 +7,7 @@ export type Product = Entity & {
   access: ProductAccesses;
   isRestartEnabled: boolean;
   isProtectedContent: boolean;
+  content: Content;
   project: Project;
 };
 

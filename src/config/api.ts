@@ -27,11 +27,18 @@ export const apiConfig = () => {
       billingPlan: {
         default: 'billing-plans',
       },
+      command: {
+        default: 'commands',
+      },
       content: {
         default: 'contents',
       },
       contentButton: {
         default: 'content-buttons',
+        tag: 'tags',
+      },
+      contentButtonAction: {
+        default: 'content-button-actions',
         tag: 'tags',
       },
       donate: {

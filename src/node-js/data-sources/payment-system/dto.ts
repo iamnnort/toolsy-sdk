@@ -4,6 +4,7 @@ import { CreateDto, SearchDto, SearchField, SyncDto, UpdateDto } from '@src/type
 export type PaymentSystemSearchDto = SearchDto<PaymentSystem, 'provider' | 'taxation' | 'vat'> & {
   projectId?: SearchField<string>;
   subscriptionPlanId?: SearchField<string>;
+  extended?: boolean;
 };
 
 export type PaymentSystemCreateDto = CreateDto<PaymentSystem, 'name', 'taxation' | 'vat'> & {

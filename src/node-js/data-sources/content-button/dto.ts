@@ -2,8 +2,8 @@ import { ContentButton } from '@src/entities/content-button/type';
 import { CreateDto, SearchDto, SearchField, SyncDto, UpdateDto } from '@src/types/dto';
 
 export type ContentButtonSearchDto = SearchDto<ContentButton, 'type' | 'style'> & {
+  contentId: SearchField<string>;
   projectId?: SearchField<string>;
-  contentId?: SearchField<string>;
   productId?: SearchField<string>;
   subscriptionPlanId?: SearchField<string>;
 };

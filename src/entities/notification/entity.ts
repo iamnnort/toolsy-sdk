@@ -5,6 +5,7 @@ import { notificationSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { NumberBuilder } from '../__number';
 import { EnumBuilder } from '../__enum';
+import { ContentBuilder } from '../content';
 
 export class NotificationEntity extends EntityEntity<Notification> {
   constructor(entity?: Partial<Notification>, entityDto: EntityDto = {}) {
@@ -37,5 +38,21 @@ export class NotificationEntity extends EntityEntity<Notification> {
 
   isLinkPreviewEnabled() {
     return this.entity.isLinkPreviewEnabled;
+  }
+
+  getProductId() {
+    return this.entity.product?.id;
+  }
+
+  getFunnelId() {
+    return this.entity.funnel?.id;
+  }
+
+  getContentId() {
+    return this.entity.content?.id;
+  }
+
+  getContent() {
+    return ContentBuilder.make(this.entity.content);
   }
 }

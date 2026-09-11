@@ -1,4 +1,5 @@
 import { Entity } from '../__entity/type';
+import { Content } from '../content/type';
 import { Funnel } from '../funnel/type';
 import { Product } from '../product/type';
 
@@ -10,6 +11,7 @@ export type Notification = Entity & {
   offset: number;
   isProtectedContent: boolean;
   isLinkPreviewEnabled: boolean;
+  content: Content;
   product: Product;
   funnel: Funnel;
 };

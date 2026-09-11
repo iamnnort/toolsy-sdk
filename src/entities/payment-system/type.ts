@@ -1,4 +1,5 @@
 import { Entity } from '../__entity/type';
+import { Content } from '../content/type';
 import { Project } from '../project/type';
 
 export type PaymentSystem = Entity & {
@@ -6,6 +7,7 @@ export type PaymentSystem = Entity & {
   provider: PaymentSystemProviders;
   taxation: TaxationSystems;
   vat: Vats;
+  content: Content;
   project: Project;
 };
 

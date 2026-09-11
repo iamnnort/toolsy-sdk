@@ -1,5 +1,6 @@
 import { Intervals } from '../../types/common';
 import { Entity } from '../__entity/type';
+import { Content } from '../content/type';
 import { Currency } from '../currency/type';
 import { Product } from '../product/type';
 
@@ -14,6 +15,7 @@ export type SubscriptionPlan = Entity & {
   access: SubscriptionPlanAccesses;
   visibility: SubscriptionPlanVisibilities;
   fixation: SubscriptionPlanFixations;
+  content: Content;
   product: Product;
   currency: Currency;
 };

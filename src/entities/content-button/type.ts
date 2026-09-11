@@ -1,5 +1,4 @@
 import { Entity } from '../__entity/type';
-import { Content } from '../content/type';
 import { Product } from '../product/type';
 import { SubscriptionPlan } from '../subscription-plan/type';
 
@@ -12,7 +11,6 @@ export type ContentButton = Entity & {
   redirectUrl: string;
   isProtectedLink: boolean;
   isDirectLink: boolean;
-  content: Content;
   product: Product;
   subscriptionPlan: SubscriptionPlan;
 };

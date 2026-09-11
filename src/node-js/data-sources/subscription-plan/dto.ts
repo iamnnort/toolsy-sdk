@@ -7,6 +7,7 @@ export type SubscriptionPlanSearchDto = SearchDto<
 > & {
   projectId?: SearchField<string>;
   productId?: SearchField<string>;
+  extended?: boolean;
 };
 
 export type SubscriptionPlanCreateDto = CreateDto<

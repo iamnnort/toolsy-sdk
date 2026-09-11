@@ -29,4 +29,8 @@ export class FunnelEntity extends EntityEntity<Funnel> {
   isProtectedContent() {
     return this.entity.isProtectedContent;
   }
+
+  getProjectId() {
+    return this.entity.project?.id;
+  }
 }

@@ -8,6 +8,7 @@ import { DateBuilder } from '../__date';
 import { EnumBuilder } from '../__enum';
 import { PriceBuilder } from '../__price';
 import { CurrencyBuilder } from '../currency';
+import { ContentBuilder } from '../content';
 
 export class SubscriptionPlanEntity extends EntityEntity<SubscriptionPlan> {
   constructor(entity?: Partial<SubscriptionPlan>, entityDto: EntityDto = {}) {
@@ -59,5 +60,21 @@ export class SubscriptionPlanEntity extends EntityEntity<SubscriptionPlan> {
 
   getCurrency() {
     return CurrencyBuilder.make(this.entity.currency);
+  }
+
+  getProductId() {
+    return this.entity.product?.id;
+  }
+
+  getCurrencyId() {
+    return this.entity.currency?.id;
+  }
+
+  getContentId() {
+    return this.entity.content?.id;
+  }
+
+  getContent() {
+    return ContentBuilder.make(this.entity.content);
   }
 }

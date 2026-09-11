@@ -5,8 +5,6 @@ import { contentButtonSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { EnumBuilder } from '../__enum';
 import { NumberBuilder } from '../__number';
-import { ProductBuilder } from '../product';
-import { SubscriptionPlanBuilder } from '../subscription-plan';
 
 export class ContentButtonEntity extends EntityEntity<ContentButton> {
   constructor(entity?: Partial<ContentButton>, entityDto: EntityDto = {}) {
@@ -45,11 +43,11 @@ export class ContentButtonEntity extends EntityEntity<ContentButton> {
     return this.entity.isDirectLink;
   }
 
-  getProduct() {
-    return ProductBuilder.make(this.entity.product);
+  getProductId() {
+    return this.entity.product?.id;
   }
 
-  getSubscriptionPlan() {
-    return SubscriptionPlanBuilder.make(this.entity.subscriptionPlan);
+  getSubscriptionPlanId() {
+    return this.entity.subscriptionPlan?.id;
   }
 }

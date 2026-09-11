@@ -58,4 +58,8 @@ export class InvoiceEntity extends EntityEntity<Invoice> {
   getSource() {
     return EnumBuilder.make(this.entity.source);
   }
+
+  getSubscriptionPlanId() {
+    return this.entity.subscriptionPlan?.id;
+  }
 }

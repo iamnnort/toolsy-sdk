@@ -7,4 +7,12 @@ export class ContentButtonTagEntity extends EntityEntity<ContentButtonTag> {
   constructor(entity?: Partial<ContentButtonTag>, entityDto: EntityDto = {}) {
     super(contentButtonTagSchema, entity, entityDto);
   }
+
+  getContentButtonId() {
+    return this.entity.contentButton?.id;
+  }
+
+  getTagId() {
+    return this.entity.tag?.id;
+  }
 }

@@ -12,4 +12,8 @@ export class TagEntity extends EntityEntity<Tag> {
   getName() {
     return StringBuilder.make(this.entity.name);
   }
+
+  getProjectId() {
+    return this.entity.project?.id;
+  }
 }

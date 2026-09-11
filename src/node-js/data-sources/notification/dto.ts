@@ -5,14 +5,16 @@ export type NotificationSearchDto = SearchDto<Notification, 'type' | 'event'> & 
   projectId?: SearchField<string>;
   productId?: SearchField<string>;
   funnelId?: SearchField<string>;
+  extended?: boolean;
 };
 
 export type NotificationCreateDto = CreateDto<
   Notification,
   'type' | 'name',
   'lifecycle' | 'event' | 'offset' | 'isProtectedContent' | 'isLinkPreviewEnabled'
-> &
-  (
+> & {
+  contentText?: string;
+} & (
     | {
         productId: string;
         funnelId?: string;

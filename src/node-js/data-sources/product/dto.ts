@@ -3,6 +3,7 @@ import { CreateDto, SearchDto, SearchField, UpdateDto } from '@src/types/dto';
 
 export type ProductSearchDto = SearchDto<Product, 'access'> & {
   projectId?: SearchField<string>;
+  extended?: boolean;
 };
 
 export type ProductCreateDto = CreateDto<Product, 'name', 'access' | 'isRestartEnabled' | 'isProtectedContent'> & {

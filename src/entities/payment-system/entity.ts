@@ -4,6 +4,7 @@ import { EntityDto } from '../type';
 import { paymentSystemSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { EnumBuilder } from '../__enum';
+import { ContentBuilder } from '../content';
 
 export class PaymentSystemEntity extends EntityEntity<PaymentSystem> {
   constructor(entity?: Partial<PaymentSystem>, entityDto: EntityDto = {}) {
@@ -24,5 +25,17 @@ export class PaymentSystemEntity extends EntityEntity<PaymentSystem> {
 
   getVat() {
     return EnumBuilder.make(this.entity.vat);
+  }
+
+  getProjectId() {
+    return this.entity.project?.id;
+  }
+
+  getContentId() {
+    return this.entity.content?.id;
+  }
+
+  getContent() {
+    return ContentBuilder.make(this.entity.content);
   }
 }
