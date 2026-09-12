@@ -63,12 +63,4 @@ export class PromoCodeEntity extends EntityEntity<PromoCode> {
   isInfinite() {
     return this.entity.isInfinite;
   }
-
-  getUsedQuantity() {
-    return NumberBuilder.make(this.entity.usedQuantity);
-  }
-
-  getPaidQuantity() {
-    return NumberBuilder.make(this.entity.paidQuantity);
-  }
 }

@@ -9,6 +9,7 @@ export type Notification = Entity & {
   lifecycle: NotificationLifecycles;
   event: NotificationEvents;
   offset: number;
+  priority: number;
   isProtectedContent: boolean;
   isLinkPreviewEnabled: boolean;
   content: Content;

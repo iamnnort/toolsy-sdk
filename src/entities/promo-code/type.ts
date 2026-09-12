@@ -14,8 +14,6 @@ export type PromoCode = Entity & {
   maxUsedQuantityIsInfinite: boolean;
   expiredAt: string;
   isInfinite: boolean;
-  usedQuantity: number;
-  paidQuantity: number;
 };
 
 export enum PromoCodeAccesses {

@@ -16,6 +16,4 @@ export const promoCodeSchema = entitySchema.extend({
   maxUsedQuantityIsInfinite: z.boolean().catch(false),
   expiredAt: z.string().catch(''),
   isInfinite: z.boolean().catch(false),
-  usedQuantity: z.number().catch(0),
-  paidQuantity: z.number().catch(0),
 });

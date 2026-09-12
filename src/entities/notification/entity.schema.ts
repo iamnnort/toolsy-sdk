@@ -8,6 +8,7 @@ export const notificationSchema = entitySchema.extend({
   lifecycle: z.enum(NotificationLifecycles).catch('' as NotificationLifecycles),
   event: z.enum(NotificationEvents).catch('' as NotificationEvents),
   offset: z.number().catch(0),
+  priority: z.number().catch(0),
   isProtectedContent: z.boolean().catch(false),
   isLinkPreviewEnabled: z.boolean().catch(false),
 });

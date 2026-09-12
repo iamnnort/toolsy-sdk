@@ -32,6 +32,10 @@ export class NotificationEntity extends EntityEntity<Notification> {
     return NumberBuilder.make(this.entity.offset);
   }
 
+  getPriority() {
+    return NumberBuilder.make(this.entity.priority);
+  }
+
   isProtectedContent() {
     return this.entity.isProtectedContent;
   }

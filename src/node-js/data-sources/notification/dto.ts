@@ -27,5 +27,5 @@ export type NotificationCreateDto = CreateDto<
 
 export type NotificationUpdateDto = UpdateDto<
   Notification,
-  'name' | 'lifecycle' | 'offset' | 'isProtectedContent' | 'isLinkPreviewEnabled'
+  'name' | 'lifecycle' | 'offset' | 'priority' | 'isProtectedContent' | 'isLinkPreviewEnabled'
 >;

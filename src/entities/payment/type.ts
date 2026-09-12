@@ -2,6 +2,7 @@ import { Entity } from '../__entity/type';
 
 export type Payment = Entity & {
   providerToken: string;
+  source: PaymentSources;
   status: PaymentStatuses;
   amountNet: number;
   amountGross: number;
@@ -15,4 +16,9 @@ export enum PaymentStatuses {
   FAILED = 'failed',
   PENDING = 'pending',
   REFUNDED = 'refunded',
+}
+
+export enum PaymentSources {
+  PAYMENT_SYSTEM = 'payment_system',
+  REFERRAL_PROGRAM = 'referral_program',
 }

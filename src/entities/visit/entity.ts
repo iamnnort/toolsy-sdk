@@ -18,8 +18,16 @@ export class VisitEntity extends EntityEntity<Visit> {
     return EnumBuilder.make(this.entity.timezone);
   }
 
+  getProvider() {
+    return EnumBuilder.make(this.entity.provider);
+  }
+
   getStatus() {
     return EnumBuilder.make(this.entity.status);
+  }
+
+  getJoinStatus() {
+    return EnumBuilder.make(this.entity.joinStatus);
   }
 
   getEmail() {

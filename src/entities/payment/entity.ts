@@ -15,6 +15,10 @@ export class PaymentEntity extends EntityEntity<Payment> {
     return StringBuilder.make(this.entity.providerToken);
   }
 
+  getSource() {
+    return EnumBuilder.make(this.entity.source);
+  }
+
   getStatus() {
     return EnumBuilder.make(this.entity.status);
   }
