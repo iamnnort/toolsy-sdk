@@ -29,8 +29,12 @@ export class NotificationEntity extends EntityEntity<Notification> {
     return EnumBuilder.make(this.entity.event);
   }
 
-  getIntervalOrigin() {
-    return EnumBuilder.make(this.entity.intervalOrigin);
+  getPeriod() {
+    return EnumBuilder.make(this.entity.period);
+  }
+
+  getPeriodCount() {
+    return NumberBuilder.make(this.entity.periodCount);
   }
 
   getInterval() {

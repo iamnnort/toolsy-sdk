@@ -9,9 +9,10 @@ export type Notification = Entity & {
   name: string;
   lifecycle: NotificationLifecycles;
   event: NotificationEvents;
-  intervalOrigin: NotificationIntervalOrigins;
   interval: Intervals;
   intervalCount: number;
+  period: Intervals;
+  periodCount: number;
   editInterval: Intervals;
   editIntervalCount: number;
   isScheduledSkipIfOverdue: boolean;
@@ -43,9 +44,4 @@ export enum NotificationEvents {
   AUTOMATION = 'automation',
   NEVER = 'never',
   SCHEDULE = 'schedule',
-}
-
-export enum NotificationIntervalOrigins {
-  NOTIFICATION = 'notification_sent',
-  SUBSCRIPTION_START = 'subscription_started',
 }
