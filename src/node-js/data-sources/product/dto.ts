@@ -6,8 +6,15 @@ export type ProductSearchDto = SearchDto<Product, 'access'> & {
   extended?: boolean;
 };
 
-export type ProductCreateDto = CreateDto<Product, 'name', 'access' | 'isRestartEnabled' | 'isProtectedContent'> & {
+export type ProductCreateDto = CreateDto<
+  Product,
+  'name',
+  'access' | 'isRestartEnabled' | 'isProtectedContent' | 'isLessonVisible' | 'isLessonNameVisible'
+> & {
   projectId: string;
 };
 
-export type ProductUpdateDto = UpdateDto<Product, 'name' | 'access' | 'isRestartEnabled' | 'isProtectedContent'>;
+export type ProductUpdateDto = UpdateDto<
+  Product,
+  'name' | 'access' | 'isRestartEnabled' | 'isProtectedContent' | 'isLessonVisible' | 'isLessonNameVisible' | 'priority'
+>;

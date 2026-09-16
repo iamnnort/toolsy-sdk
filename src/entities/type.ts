@@ -5,6 +5,7 @@ export * from './__price/type';
 export * from './__entity/type';
 export * from './__date/type';
 export * from './__bot-provider/type';
+export * from './automation/type';
 export * from './client/type';
 export * from './project/type';
 export * from './currency/type';

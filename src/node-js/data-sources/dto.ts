@@ -14,6 +14,7 @@ export * from './funnel/dto';
 export * from './invoice/dto';
 export * from './marketing-program/dto';
 export * from './message/dto';
+export * from './automation/dto';
 export * from './notification/dto';
 export * from './payment/dto';
 export * from './promo-code/dto';

@@ -1,3 +1,4 @@
+import { Intervals, Weekdays } from '../../types/common';
 import { Entity } from '../__entity/type';
 import { Content } from '../content/type';
 import { Funnel } from '../funnel/type';
@@ -8,7 +9,16 @@ export type Notification = Entity & {
   name: string;
   lifecycle: NotificationLifecycles;
   event: NotificationEvents;
-  offset: number;
+  intervalOrigin: NotificationIntervalOrigins;
+  interval: Intervals;
+  intervalCount: number;
+  editInterval: Intervals;
+  editIntervalCount: number;
+  isScheduledSkipIfOverdue: boolean;
+  scheduledAt: string;
+  sendWindowTimeFrom: string;
+  sendWindowTimeTo: string;
+  sendWindowWeekdays: Weekdays[];
   priority: number;
   isProtectedContent: boolean;
   isLinkPreviewEnabled: boolean;
@@ -33,4 +43,9 @@ export enum NotificationEvents {
   AUTOMATION = 'automation',
   NEVER = 'never',
   SCHEDULE = 'schedule',
+}
+
+export enum NotificationIntervalOrigins {
+  NOTIFICATION = 'notification_sent',
+  SUBSCRIPTION_START = 'subscription_started',
 }

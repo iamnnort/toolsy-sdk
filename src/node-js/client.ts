@@ -1,5 +1,6 @@
 import { ToolsyClientConfig } from './types';
 import {
+  AutomationDataSource,
   BillingPlanDataSource,
   ClientDataSource,
   CommandDataSource,
@@ -27,6 +28,8 @@ import {
 } from './data-sources';
 
 export class ToolsyClient {
+  automation: AutomationDataSource;
+
   billingPlan: BillingPlanDataSource;
 
   client: ClientDataSource;
@@ -76,6 +79,7 @@ export class ToolsyClient {
   visit: VisitDataSource;
 
   constructor(config: ToolsyClientConfig) {
+    this.automation = new AutomationDataSource(config);
     this.billingPlan = new BillingPlanDataSource(config);
     this.client = new ClientDataSource(config);
     this.command = new CommandDataSource(config);

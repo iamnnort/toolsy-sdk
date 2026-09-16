@@ -12,6 +12,10 @@ export type SubscriptionPlan = Entity & {
   subscriberLimit: number;
   interval: Intervals;
   intervalCount: number;
+  retryLimit: number;
+  retryInterval: Intervals;
+  retryIntervalCount: number;
+  priority: number;
   access: SubscriptionPlanAccesses;
   visibility: SubscriptionPlanVisibilities;
   fixation: SubscriptionPlanFixations;

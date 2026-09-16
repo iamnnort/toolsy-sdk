@@ -46,6 +46,22 @@ export class SubscriptionPlanEntity extends EntityEntity<SubscriptionPlan> {
     return NumberBuilder.make(this.entity.intervalCount);
   }
 
+  getRetryLimit() {
+    return NumberBuilder.make(this.entity.retryLimit);
+  }
+
+  getRetryInterval() {
+    return EnumBuilder.make(this.entity.retryInterval);
+  }
+
+  getRetryIntervalCount() {
+    return NumberBuilder.make(this.entity.retryIntervalCount);
+  }
+
+  getPriority() {
+    return NumberBuilder.make(this.entity.priority);
+  }
+
   getAccess() {
     return EnumBuilder.make(this.entity.access);
   }

@@ -15,6 +15,7 @@ export * from './funnel';
 export * from './invoice';
 export * from './marketing-program';
 export * from './message';
+export * from './automation';
 export * from './notification';
 export * from './payment';
 export * from './promo-code';

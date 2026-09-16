@@ -11,7 +11,20 @@ export type NotificationSearchDto = SearchDto<Notification, 'type' | 'event'> & 
 export type NotificationCreateDto = CreateDto<
   Notification,
   'type' | 'name',
-  'lifecycle' | 'event' | 'offset' | 'isProtectedContent' | 'isLinkPreviewEnabled'
+  | 'lifecycle'
+  | 'event'
+  | 'intervalOrigin'
+  | 'interval'
+  | 'intervalCount'
+  | 'editInterval'
+  | 'editIntervalCount'
+  | 'isScheduledSkipIfOverdue'
+  | 'scheduledAt'
+  | 'sendWindowTimeFrom'
+  | 'sendWindowTimeTo'
+  | 'sendWindowWeekdays'
+  | 'isProtectedContent'
+  | 'isLinkPreviewEnabled'
 > & {
   contentText?: string;
 } & (
@@ -27,5 +40,20 @@ export type NotificationCreateDto = CreateDto<
 
 export type NotificationUpdateDto = UpdateDto<
   Notification,
-  'name' | 'lifecycle' | 'offset' | 'priority' | 'isProtectedContent' | 'isLinkPreviewEnabled'
+  | 'name'
+  | 'lifecycle'
+  | 'event'
+  | 'intervalOrigin'
+  | 'interval'
+  | 'intervalCount'
+  | 'editInterval'
+  | 'editIntervalCount'
+  | 'isScheduledSkipIfOverdue'
+  | 'scheduledAt'
+  | 'sendWindowTimeFrom'
+  | 'sendWindowTimeTo'
+  | 'sendWindowWeekdays'
+  | 'priority'
+  | 'isProtectedContent'
+  | 'isLinkPreviewEnabled'
 >;

@@ -5,6 +5,7 @@ import { notificationSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { NumberBuilder } from '../__number';
 import { EnumBuilder } from '../__enum';
+import { DateBuilder } from '../__date';
 import { ContentBuilder } from '../content';
 
 export class NotificationEntity extends EntityEntity<Notification> {
@@ -28,8 +29,44 @@ export class NotificationEntity extends EntityEntity<Notification> {
     return EnumBuilder.make(this.entity.event);
   }
 
-  getOffset() {
-    return NumberBuilder.make(this.entity.offset);
+  getIntervalOrigin() {
+    return EnumBuilder.make(this.entity.intervalOrigin);
+  }
+
+  getInterval() {
+    return EnumBuilder.make(this.entity.interval);
+  }
+
+  getIntervalCount() {
+    return NumberBuilder.make(this.entity.intervalCount);
+  }
+
+  getEditInterval() {
+    return EnumBuilder.make(this.entity.editInterval);
+  }
+
+  getEditIntervalCount() {
+    return NumberBuilder.make(this.entity.editIntervalCount);
+  }
+
+  isScheduledSkipIfOverdue() {
+    return this.entity.isScheduledSkipIfOverdue;
+  }
+
+  getScheduledAt() {
+    return DateBuilder.make(this.entity.scheduledAt, this.dto);
+  }
+
+  getSendWindowTimeFrom() {
+    return StringBuilder.make(this.entity.sendWindowTimeFrom);
+  }
+
+  getSendWindowTimeTo() {
+    return StringBuilder.make(this.entity.sendWindowTimeTo);
+  }
+
+  getSendWindowWeekdays() {
+    return this.entity.sendWindowWeekdays.map((weekday) => EnumBuilder.make(weekday));
   }
 
   getPriority() {

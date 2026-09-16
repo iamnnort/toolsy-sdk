@@ -5,6 +5,7 @@ export * from './__enum';
 export * from './__number';
 export * from './__price';
 export * from './__string';
+export * from './automation';
 export * from './client';
 export * from './project';
 export * from './currency';

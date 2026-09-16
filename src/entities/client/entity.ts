@@ -50,4 +50,12 @@ export class ClientEntity extends EntityEntity<Client> {
 
     return BotProviderBuilder.make(provider);
   }
+
+  getTimezone() {
+    return this.entity.timezone;
+  }
+
+  getLanguage() {
+    return this.entity.language;
+  }
 }

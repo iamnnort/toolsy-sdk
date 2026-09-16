@@ -7,6 +7,9 @@ export type Product = Entity & {
   access: ProductAccesses;
   isRestartEnabled: boolean;
   isProtectedContent: boolean;
+  isLessonVisible: boolean;
+  isLessonNameVisible: boolean;
+  priority: number;
   content: Content;
   project: Project;
 };

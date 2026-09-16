@@ -13,7 +13,17 @@ export type SubscriptionPlanSearchDto = SearchDto<
 export type SubscriptionPlanCreateDto = CreateDto<
   SubscriptionPlan,
   'name' | 'price',
-  'isInfinite' | 'interval' | 'intervalCount' | 'access' | 'visibility' | 'fixation' | 'closesAt' | 'subscriberLimit'
+  | 'isInfinite'
+  | 'interval'
+  | 'intervalCount'
+  | 'access'
+  | 'visibility'
+  | 'fixation'
+  | 'closesAt'
+  | 'subscriberLimit'
+  | 'retryLimit'
+  | 'retryInterval'
+  | 'retryIntervalCount'
 > & {
   productId: string;
   currencyId: string;
@@ -31,6 +41,10 @@ export type SubscriptionPlanUpdateDto = UpdateDto<
   | 'fixation'
   | 'closesAt'
   | 'subscriberLimit'
+  | 'retryLimit'
+  | 'retryInterval'
+  | 'retryIntervalCount'
+  | 'priority'
 > & {
   currencyId?: UpdateField<string>;
 };

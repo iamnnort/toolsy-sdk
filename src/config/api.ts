@@ -24,6 +24,9 @@ export const apiConfig = () => {
         subscriptionPlan: 'subscription-plans',
         donate: 'donates',
       },
+      automation: {
+        default: 'automations',
+      },
       billingPlan: {
         default: 'billing-plans',
       },

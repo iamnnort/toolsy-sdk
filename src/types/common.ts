@@ -43,9 +43,20 @@ export enum Intervals {
   DAY = 'day',
   HOUR = 'hour',
   MINUTE = 'minute',
+  SECOND = 'second',
   MONTH = 'month',
   WEEK = 'week',
   YEAR = 'year',
+}
+
+export enum Weekdays {
+  FRIDAY = 'friday',
+  MONDAY = 'monday',
+  SATURDAY = 'saturday',
+  SUNDAY = 'sunday',
+  THURSDAY = 'thursday',
+  TUESDAY = 'tuesday',
+  WEDNESDAY = 'wednesday',
 }
 
 export enum SortOrders {
