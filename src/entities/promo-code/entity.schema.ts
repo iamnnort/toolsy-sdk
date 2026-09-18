@@ -1,19 +1,18 @@
 import { z } from 'zod';
 import { entitySchema } from '../__entity/entity.schema';
+import { currencySchema } from '../currency/entity.schema';
 import { PromoCodeAccesses, PromoCodeVisibilities } from './type';
 
 export const promoCodeSchema = entitySchema.extend({
-  name: z.string().catch(''),
+  code: z.string().catch(''),
   access: z.enum(PromoCodeAccesses).catch('' as PromoCodeAccesses),
   visibility: z.enum(PromoCodeVisibilities).catch('' as PromoCodeVisibilities),
-  discountPercent: z.number().catch(0),
-  discountAmount: z.number().catch(0),
-  maxQuantity: z.number().catch(0),
-  maxQuantityIsInfinite: z.boolean().catch(false),
-  maxRecurringQuantity: z.number().catch(0),
-  maxRecurringQuantityIsInfinite: z.boolean().catch(false),
-  maxUsedQuantity: z.number().catch(0),
-  maxUsedQuantityIsInfinite: z.boolean().catch(false),
-  expiredAt: z.string().catch(''),
-  isInfinite: z.boolean().catch(false),
+  discountPercentage: z.number().nullable().catch(null),
+  discountAmount: z.number().nullable().catch(null),
+  usageLimit: z.number().nullable().catch(null),
+  recurringUsageLimit: z.number().nullable().catch(null),
+  perUserUsageLimit: z.number().nullable().catch(null),
+  expiresAt: z.string().nullable().catch(null),
+  priority: z.number().catch(0),
+  discountCurrency: currencySchema.catch(() => currencySchema.parse({})),
 });

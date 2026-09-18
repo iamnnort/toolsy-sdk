@@ -1,19 +1,29 @@
 import { Entity } from '../__entity/type';
+import { Currency } from '../currency/type';
+import { Project } from '../project/type';
 
 export type PromoCode = Entity & {
-  name: string;
+  code: string;
   access: PromoCodeAccesses;
   visibility: PromoCodeVisibilities;
-  discountPercent: number;
-  discountAmount: number;
-  maxQuantity: number;
-  maxQuantityIsInfinite: boolean;
-  maxRecurringQuantity: number;
-  maxRecurringQuantityIsInfinite: boolean;
-  maxUsedQuantity: number;
-  maxUsedQuantityIsInfinite: boolean;
-  expiredAt: string;
-  isInfinite: boolean;
+  discountPercentage: number | null;
+  discountAmount: number | null;
+  usageLimit: number | null;
+  recurringUsageLimit: number | null;
+  perUserUsageLimit: number | null;
+  expiresAt: string | null;
+  priority: number;
+  discountCurrency: Currency;
+  project: Project;
+};
+
+export type PromoCodeMetrics = {
+  paidInvoice: {
+    count: number;
+  };
+  visitPromoCodeUsageCount: {
+    sum: number;
+  };
 };
 
 export enum PromoCodeAccesses {

@@ -31,10 +31,10 @@ export type NotificationCreateDto = CreateDto<
 } & (
     | {
         productId: string;
-        funnelId?: string;
+        funnelId?: string | null;
       }
     | {
-        productId?: string;
+        productId?: string | null;
         funnelId: string;
       }
   );

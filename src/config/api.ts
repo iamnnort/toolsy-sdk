@@ -68,6 +68,8 @@ export const apiConfig = () => {
       },
       promoCode: {
         default: 'promo-codes',
+        metric: 'metrics',
+        subscriptionPlan: 'subscription-plans',
       },
       refund: {
         default: 'refunds',

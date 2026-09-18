@@ -16,11 +16,11 @@ export type ContentButtonActionSearchDto = SearchDto<ContentButtonAction, 'type'
 export type ContentButtonActionCreateDto = CreateDto<ContentButtonAction, 'type', 'priority'> & {
   contentButtonId: string;
   contentText?: string;
-  notificationId?: string;
-  commandId?: string;
-  subscriptionPlanId?: string;
-  productId?: string;
-  funnelId?: string;
+  notificationId?: string | null;
+  commandId?: string | null;
+  subscriptionPlanId?: string | null;
+  productId?: string | null;
+  funnelId?: string | null;
 };
 
 export type ContentButtonActionUpdateDto = UpdateDto<ContentButtonAction, 'type' | 'priority'> & {

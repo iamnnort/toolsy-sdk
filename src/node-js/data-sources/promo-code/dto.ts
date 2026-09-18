@@ -1,7 +1,7 @@
 import { PromoCode } from '@src/entities/promo-code/type';
-import { CreateDto, SearchDto, SearchField } from '@src/types/dto';
+import { CreateDto, SearchDto, SearchField, SyncDto, UpdateDto, UpdateField } from '@src/types/dto';
 
-export type PromoCodeSearchDto = SearchDto<PromoCode, 'name' | 'access' | 'visibility'> & {
+export type PromoCodeSearchDto = SearchDto<PromoCode, 'code' | 'access' | 'visibility'> & {
   projectId?: SearchField<string>;
   productId?: SearchField<string>;
   subscriptionPlanId?: SearchField<string>;
@@ -9,21 +9,33 @@ export type PromoCodeSearchDto = SearchDto<PromoCode, 'name' | 'access' | 'visib
 
 export type PromoCodeCreateDto = CreateDto<
   PromoCode,
-  'name',
-  | 'discountPercent'
+  'code',
+  | 'discountPercentage'
   | 'discountAmount'
-  | 'maxQuantity'
-  | 'maxQuantityIsInfinite'
-  | 'maxUsedQuantity'
-  | 'maxUsedQuantityIsInfinite'
-  | 'maxRecurringQuantity'
-  | 'maxRecurringQuantityIsInfinite'
-  | 'expiredAt'
-  | 'isInfinite'
+  | 'usageLimit'
+  | 'recurringUsageLimit'
+  | 'perUserUsageLimit'
+  | 'expiresAt'
   | 'access'
   | 'visibility'
 > & {
-  productId: string;
-  subscriptionPlanIds: string[];
-  discountCurrencyId?: string;
+  projectId: string;
+  discountCurrencyId?: string | null;
 };
+
+export type PromoCodeUpdateDto = UpdateDto<
+  PromoCode,
+  | 'discountPercentage'
+  | 'discountAmount'
+  | 'usageLimit'
+  | 'recurringUsageLimit'
+  | 'perUserUsageLimit'
+  | 'expiresAt'
+  | 'access'
+  | 'visibility'
+  | 'priority'
+> & {
+  discountCurrencyId?: UpdateField<string>;
+};
+
+export type PromoCodeSyncDto = SyncDto;

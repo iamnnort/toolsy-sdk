@@ -31,8 +31,8 @@ export class InvoiceEntity extends EntityEntity<Invoice> {
     return NumberBuilder.make(this.entity.exchangeRate);
   }
 
-  getDiscountPercent() {
-    return NumberBuilder.make(this.entity.discountPercent);
+  getDiscountPercentage() {
+    return NumberBuilder.make(this.entity.discountPercentage);
   }
 
   getDiscountAmount() {

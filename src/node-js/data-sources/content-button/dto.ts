@@ -14,7 +14,7 @@ export type ContentButtonCreateDto = CreateDto<
   'style' | 'url' | 'isProtectedLink' | 'isDirectLink'
 > & {
   contentId: string;
-  productId?: string;
+  productId?: string | null;
   subscriptionPlanId?: string | null;
 };
 
@@ -22,7 +22,7 @@ export type ContentButtonUpdateDto = UpdateDto<
   ContentButton,
   'style' | 'priority' | 'title' | 'url' | 'isProtectedLink' | 'isDirectLink'
 > & {
-  productId?: string;
+  productId?: string | null;
   subscriptionPlanId?: string | null;
 };
 

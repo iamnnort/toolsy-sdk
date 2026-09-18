@@ -20,7 +20,7 @@ export type InvoiceCreateClientDto = {
 export type InvoiceCreateDto = {
   subscriptionPlanId: string;
   paymentSystemId: string;
-  visitId?: string;
-  clientId?: string;
+  visitId?: string | null;
+  clientId?: string | null;
   client?: InvoiceCreateClientDto;
 };

@@ -7,7 +7,7 @@ export type Invoice = Entity & {
   totalPrice: number;
   convertedTotalPrice: number;
   exchangeRate: number;
-  discountPercent: number;
+  discountPercentage: number;
   discountAmount: number;
   convertedDiscountAmount: number;
   discountExchangeRate: number;

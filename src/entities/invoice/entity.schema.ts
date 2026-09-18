@@ -8,7 +8,7 @@ export const invoiceSchema = entitySchema.extend({
   totalPrice: z.number().catch(0),
   convertedTotalPrice: z.number().catch(0),
   exchangeRate: z.number().catch(0),
-  discountPercent: z.number().catch(0),
+  discountPercentage: z.number().catch(0),
   discountAmount: z.number().catch(0),
   convertedDiscountAmount: z.number().catch(0),
   discountExchangeRate: z.number().catch(0),

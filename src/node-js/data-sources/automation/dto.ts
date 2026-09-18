@@ -14,7 +14,7 @@ export type AutomationCreateDto = CreateDto<
   'lifecycle' | 'interval' | 'intervalCount' | 'sendWindowTimeFrom' | 'sendWindowTimeTo' | 'sendWindowWeekdays'
 > & {
   productId: string;
-  actionNotificationId?: string;
+  actionNotificationId?: string | null;
   actionNotificationName?: string;
   actionNotificationContentText?: string;
 };

@@ -1,3 +1,6 @@
 export enum ToolsyErrorMessageCodes {
   NOT_FOUND = 'NOT_FOUND',
+
+  // PromoCode
+  PROMO_CODE_ALREADY_EXISTS_CONFLICT = 'PROMO_CODE_ALREADY_EXISTS_CONFLICT',
 }

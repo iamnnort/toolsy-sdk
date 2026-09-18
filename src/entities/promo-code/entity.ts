@@ -6,14 +6,15 @@ import { StringBuilder } from '../__string';
 import { NumberBuilder } from '../__number';
 import { EnumBuilder } from '../__enum';
 import { DateBuilder } from '../__date';
+import { CurrencyBuilder } from '../currency';
 
 export class PromoCodeEntity extends EntityEntity<PromoCode> {
   constructor(entity?: Partial<PromoCode>, entityDto: EntityDto = {}) {
     super(promoCodeSchema, entity, entityDto);
   }
 
-  getName() {
-    return StringBuilder.make(this.entity.name);
+  getCode() {
+    return StringBuilder.make(this.entity.code);
   }
 
   getAccess() {
@@ -24,43 +25,43 @@ export class PromoCodeEntity extends EntityEntity<PromoCode> {
     return EnumBuilder.make(this.entity.visibility);
   }
 
-  getDiscountPercent() {
-    return NumberBuilder.make(this.entity.discountPercent);
+  getDiscountPercentage() {
+    return NumberBuilder.make(this.entity.discountPercentage);
   }
 
   getDiscountAmount() {
     return NumberBuilder.make(this.entity.discountAmount);
   }
 
-  getMaxQuantity() {
-    return NumberBuilder.make(this.entity.maxQuantity);
+  getUsageLimit() {
+    return NumberBuilder.make(this.entity.usageLimit);
   }
 
-  getMaxQuantityIsInfinite() {
-    return this.entity.maxQuantityIsInfinite;
+  getRecurringUsageLimit() {
+    return NumberBuilder.make(this.entity.recurringUsageLimit);
   }
 
-  getMaxRecurringQuantity() {
-    return NumberBuilder.make(this.entity.maxRecurringQuantity);
+  getPerUserUsageLimit() {
+    return NumberBuilder.make(this.entity.perUserUsageLimit);
   }
 
-  getMaxRecurringQuantityIsInfinite() {
-    return this.entity.maxRecurringQuantityIsInfinite;
+  getExpiresAt() {
+    return DateBuilder.make(this.entity.expiresAt, this.dto);
   }
 
-  getMaxUsedQuantity() {
-    return NumberBuilder.make(this.entity.maxUsedQuantity);
+  getPriority() {
+    return NumberBuilder.make(this.entity.priority);
   }
 
-  getMaxUsedQuantityIsInfinite() {
-    return this.entity.maxUsedQuantityIsInfinite;
+  getDiscountCurrency() {
+    return CurrencyBuilder.make(this.entity.discountCurrency);
   }
 
-  getExpiredAt() {
-    return DateBuilder.make(this.entity.expiredAt, this.dto);
+  getDiscountCurrencyId() {
+    return this.entity.discountCurrency?.id;
   }
 
-  isInfinite() {
-    return this.entity.isInfinite;
+  getProjectId() {
+    return this.entity.project?.id;
   }
 }
