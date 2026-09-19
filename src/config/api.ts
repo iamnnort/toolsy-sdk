@@ -8,6 +8,7 @@ export const apiConfig = () => {
       },
       project: {
         default: 'projects',
+        metric: 'metrics',
       },
       currency: {
         default: 'currencies',
