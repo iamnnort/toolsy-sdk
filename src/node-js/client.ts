@@ -13,7 +13,7 @@ import {
   InvoiceDataSource,
   MarketingProgramDataSource,
   MessageDataSource,
-  NotificationSpaceDataSource,
+  AccessPolicyDataSource,
   NotificationDataSource,
   PaymentDataSource,
   PaymentSystemDataSource,
@@ -58,7 +58,7 @@ export class ToolsyClient {
 
   notification: NotificationDataSource;
 
-  notificationSpace: NotificationSpaceDataSource;
+  accessPolicy: AccessPolicyDataSource;
 
   payment: PaymentDataSource;
 
@@ -99,7 +99,7 @@ export class ToolsyClient {
     this.marketingProgram = new MarketingProgramDataSource(config);
     this.message = new MessageDataSource(config);
     this.notification = new NotificationDataSource(config);
-    this.notificationSpace = new NotificationSpaceDataSource(config);
+    this.accessPolicy = new AccessPolicyDataSource(config);
     this.payment = new PaymentDataSource(config);
     this.paymentSystem = new PaymentSystemDataSource(config);
     this.product = new ProductDataSource(config);

@@ -17,7 +17,7 @@ export * from './marketing-program';
 export * from './message';
 export * from './automation';
 export * from './notification';
-export * from './notification-space';
+export * from './access-policy';
 export * from './payment';
 export * from './promo-code';
 export * from './refund';

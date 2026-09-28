@@ -25,7 +25,7 @@ export * from './invoice/type';
 export * from './marketing-program/type';
 export * from './message/type';
 export * from './notification/type';
-export * from './notification-space/type';
+export * from './access-policy/type';
 export * from './payment/type';
 export * from './promo-code/type';
 export * from './refund/type';

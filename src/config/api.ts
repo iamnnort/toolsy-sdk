@@ -69,8 +69,8 @@ export const apiConfig = () => {
         default: 'notifications',
         copy: 'copy',
       },
-      notificationSpace: {
-        default: 'notification-spaces',
+      accessPolicy: {
+        default: 'access-policies',
       },
       payment: {
         default: 'payments',

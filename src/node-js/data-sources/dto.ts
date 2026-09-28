@@ -16,7 +16,7 @@ export * from './marketing-program/dto';
 export * from './message/dto';
 export * from './automation/dto';
 export * from './notification/dto';
-export * from './notification-space/dto';
+export * from './access-policy/dto';
 export * from './payment/dto';
 export * from './promo-code/dto';
 export * from './refund/dto';

@@ -1,14 +1,14 @@
 import { EntityEntity } from '../__entity/entity';
-import { NotificationSpace } from './type';
+import { AccessPolicy } from './type';
 import { EntityDto } from '../type';
-import { notificationSpaceSchema } from './entity.schema';
+import { accessPolicySchema } from './entity.schema';
 import { DateBuilder } from '../__date';
 import { NotificationBuilder } from '../notification';
 import { SpaceBuilder } from '../space';
 
-export class NotificationSpaceEntity extends EntityEntity<NotificationSpace> {
-  constructor(entity?: Partial<NotificationSpace>, entityDto: EntityDto = {}) {
-    super(notificationSpaceSchema, entity, entityDto);
+export class AccessPolicyEntity extends EntityEntity<AccessPolicy> {
+  constructor(entity?: Partial<AccessPolicy>, entityDto: EntityDto = {}) {
+    super(accessPolicySchema, entity, entityDto);
   }
 
   getExpiresAt() {
