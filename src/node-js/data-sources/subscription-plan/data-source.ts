@@ -25,6 +25,13 @@ export class SubscriptionPlanDataSource extends pickRequestDataSource<
     });
   }
 
+  copy(id: string) {
+    return this.common<SubscriptionPlan>({
+      method: HttpMethods.POST,
+      urlParts: [id, cfg.api.endpoints.subscriptionPlan.copy],
+    });
+  }
+
   syncPaymentSystems(id: string, dto: { data: SubscriptionPlanSyncDto }) {
     return this.common<void>({
       ...dto,

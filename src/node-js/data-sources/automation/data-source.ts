@@ -1,4 +1,4 @@
-import { PaginationResponse, pickRequestDataSource } from '@iamnnort/request';
+import { HttpMethods, PaginationResponse, pickRequestDataSource } from '@iamnnort/request';
 import { config as cfg } from '@src/config';
 import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
@@ -6,7 +6,7 @@ import { Automation } from '@src/entities/automation/type';
 import { AutomationCreateDto, AutomationSearchDto, AutomationUpdateDto } from './dto';
 
 export class AutomationDataSource extends pickRequestDataSource<
-  'search' | 'get' | 'create' | 'update' | 'remove',
+  'search' | 'get' | 'create' | 'update' | 'remove' | 'common',
   Automation,
   { params: AutomationSearchDto },
   PaginationResponse<Automation>,
@@ -17,6 +17,13 @@ export class AutomationDataSource extends pickRequestDataSource<
     super({
       ...ToolsyClientService.getDataSourceConfig(config),
       url: cfg.api.endpoints.automation.default,
+    });
+  }
+
+  copy(id: string) {
+    return this.common<Automation>({
+      method: HttpMethods.POST,
+      urlParts: [id, cfg.api.endpoints.automation.copy],
     });
   }
 }

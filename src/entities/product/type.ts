@@ -5,7 +5,7 @@ import { Project } from '../project/type';
 export type Product = Entity & {
   name: string;
   access: ProductAccesses;
-  isRestartEnabled: boolean;
+  isRestartable: boolean;
   isProtectedContent: boolean;
   isLessonVisible: boolean;
   isLessonNameVisible: boolean;

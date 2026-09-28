@@ -6,6 +6,7 @@ export type ContentButtonSearchDto = SearchDto<ContentButton, 'type' | 'style'> 
   projectId?: SearchField<string>;
   productId?: SearchField<string>;
   subscriptionPlanId?: SearchField<string>;
+  spaceId?: SearchField<string>;
 };
 
 export type ContentButtonCreateDto = CreateDto<
@@ -16,6 +17,7 @@ export type ContentButtonCreateDto = CreateDto<
   contentId: string;
   productId?: string | null;
   subscriptionPlanId?: string | null;
+  spaceId?: string | null;
 };
 
 export type ContentButtonUpdateDto = UpdateDto<
@@ -24,6 +26,7 @@ export type ContentButtonUpdateDto = UpdateDto<
 > & {
   productId?: string | null;
   subscriptionPlanId?: string | null;
+  spaceId?: string | null;
 };
 
 export type ContentButtonSyncDto = SyncDto;

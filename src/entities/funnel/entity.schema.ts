@@ -8,4 +8,5 @@ export const funnelSchema = entitySchema.extend({
   isDefault: z.boolean().catch(false),
   isRestartable: z.boolean().catch(false),
   isProtectedContent: z.boolean().catch(false),
+  priority: z.number().catch(0),
 });

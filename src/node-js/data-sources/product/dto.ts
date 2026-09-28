@@ -9,12 +9,12 @@ export type ProductSearchDto = SearchDto<Product, 'access'> & {
 export type ProductCreateDto = CreateDto<
   Product,
   'name',
-  'access' | 'isRestartEnabled' | 'isProtectedContent' | 'isLessonVisible' | 'isLessonNameVisible'
+  'access' | 'isRestartable' | 'isProtectedContent' | 'isLessonVisible' | 'isLessonNameVisible'
 > & {
   projectId: string;
 };
 
 export type ProductUpdateDto = UpdateDto<
   Product,
-  'name' | 'access' | 'isRestartEnabled' | 'isProtectedContent' | 'isLessonVisible' | 'isLessonNameVisible' | 'priority'
+  'name' | 'access' | 'isRestartable' | 'isProtectedContent' | 'isLessonVisible' | 'isLessonNameVisible' | 'priority'
 >;

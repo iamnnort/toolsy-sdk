@@ -15,10 +15,12 @@ export const apiConfig = () => {
       },
       product: {
         default: 'products',
+        copy: 'copy',
       },
       subscriptionPlan: {
         default: 'subscription-plans',
         paymentSystem: 'payment-systems',
+        copy: 'copy',
       },
       paymentSystem: {
         default: 'payment-systems',
@@ -27,6 +29,7 @@ export const apiConfig = () => {
       },
       automation: {
         default: 'automations',
+        copy: 'copy',
       },
       billingPlan: {
         default: 'billing-plans',
@@ -50,6 +53,7 @@ export const apiConfig = () => {
       },
       funnel: {
         default: 'funnels',
+        copy: 'copy',
       },
       invoice: {
         default: 'invoices',
@@ -63,6 +67,10 @@ export const apiConfig = () => {
       },
       notification: {
         default: 'notifications',
+        copy: 'copy',
+      },
+      notificationSpace: {
+        default: 'notification-spaces',
       },
       payment: {
         default: 'payments',
@@ -71,6 +79,7 @@ export const apiConfig = () => {
         default: 'promo-codes',
         metric: 'metrics',
         subscriptionPlan: 'subscription-plans',
+        copy: 'copy',
       },
       refund: {
         default: 'refunds',
@@ -86,6 +95,9 @@ export const apiConfig = () => {
       },
       client: {
         default: 'clients',
+      },
+      space: {
+        default: 'spaces',
       },
     },
   };

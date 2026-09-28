@@ -34,4 +34,11 @@ export class PromoCodeDataSource extends pickRequestDataSource<
       urlParts: [id, cfg.api.endpoints.promoCode.subscriptionPlan],
     });
   }
+
+  copy(id: string) {
+    return this.common<PromoCode>({
+      method: HttpMethods.POST,
+      urlParts: [id, cfg.api.endpoints.promoCode.copy],
+    });
+  }
 }

@@ -50,4 +50,8 @@ export class ContentButtonEntity extends EntityEntity<ContentButton> {
   getSubscriptionPlanId() {
     return this.entity.subscriptionPlan?.id;
   }
+
+  getSpaceId() {
+    return this.entity.space?.id;
+  }
 }

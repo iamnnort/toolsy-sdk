@@ -5,7 +5,7 @@ Toolsy SDK for Node.js - Fast - Interactive - Simple
 ## Installation
 
 ```bash
-npm install @iamnnort/toolsy-sdk
+yarn add @iamnnort/toolsy-sdk
 # or
 yarn add @iamnnort/toolsy-sdk
 ```

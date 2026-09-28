@@ -20,8 +20,8 @@ export class ProductEntity extends EntityEntity<Product> {
     return EnumBuilder.make(this.entity.access);
   }
 
-  isRestartEnabled() {
-    return this.entity.isRestartEnabled;
+  isRestartable() {
+    return this.entity.isRestartable;
   }
 
   isProtectedContent() {

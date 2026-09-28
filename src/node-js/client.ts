@@ -13,6 +13,7 @@ import {
   InvoiceDataSource,
   MarketingProgramDataSource,
   MessageDataSource,
+  NotificationSpaceDataSource,
   NotificationDataSource,
   PaymentDataSource,
   PaymentSystemDataSource,
@@ -21,6 +22,7 @@ import {
   PromoCodeDataSource,
   RefundDataSource,
   SessionDataSource,
+  SpaceDataSource,
   SubscriptionDataSource,
   SubscriptionPlanDataSource,
   TagDataSource,
@@ -56,6 +58,8 @@ export class ToolsyClient {
 
   notification: NotificationDataSource;
 
+  notificationSpace: NotificationSpaceDataSource;
+
   payment: PaymentDataSource;
 
   paymentSystem: PaymentSystemDataSource;
@@ -69,6 +73,8 @@ export class ToolsyClient {
   refund: RefundDataSource;
 
   session: SessionDataSource;
+
+  space: SpaceDataSource;
 
   subscription: SubscriptionDataSource;
 
@@ -93,6 +99,7 @@ export class ToolsyClient {
     this.marketingProgram = new MarketingProgramDataSource(config);
     this.message = new MessageDataSource(config);
     this.notification = new NotificationDataSource(config);
+    this.notificationSpace = new NotificationSpaceDataSource(config);
     this.payment = new PaymentDataSource(config);
     this.paymentSystem = new PaymentSystemDataSource(config);
     this.product = new ProductDataSource(config);
@@ -100,6 +107,7 @@ export class ToolsyClient {
     this.promoCode = new PromoCodeDataSource(config);
     this.refund = new RefundDataSource(config);
     this.session = new SessionDataSource(config);
+    this.space = new SpaceDataSource(config);
     this.subscription = new SubscriptionDataSource(config);
     this.subscriptionPlan = new SubscriptionPlanDataSource(config);
     this.tag = new TagDataSource(config);

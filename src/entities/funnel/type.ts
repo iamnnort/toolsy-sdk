@@ -1,4 +1,5 @@
 import { Entity } from '../__entity/type';
+import { Content } from '../content/type';
 import { Project } from '../project/type';
 
 export type Funnel = Entity & {
@@ -7,7 +8,10 @@ export type Funnel = Entity & {
   isDefault: boolean;
   isRestartable: boolean;
   isProtectedContent: boolean;
+  priority: number;
+  content: Content;
   project: Project;
+  triggerFunnel: Funnel;
 };
 
 export enum FunnelLifecycles {
