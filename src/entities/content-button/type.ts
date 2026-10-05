@@ -10,6 +10,7 @@ export type ContentButton = Entity & {
   title: string;
   url: string;
   redirectUrl: string;
+  joinUrl: string;
   isProtectedLink: boolean;
   isDirectLink: boolean;
   product: Product;

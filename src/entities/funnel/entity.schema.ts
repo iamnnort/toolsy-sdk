@@ -7,6 +7,6 @@ export const funnelSchema = entitySchema.extend({
   lifecycle: z.enum(FunnelLifecycles).catch('' as FunnelLifecycles),
   isDefault: z.boolean().catch(false),
   isRestartable: z.boolean().catch(false),
-  isProtectedContent: z.boolean().catch(false),
+  hasContentProtection: z.boolean().catch(false),
   priority: z.number().catch(0),
 });

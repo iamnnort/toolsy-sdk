@@ -6,7 +6,7 @@ export const productSchema = entitySchema.extend({
   name: z.string().catch(''),
   access: z.enum(ProductAccesses).catch('' as ProductAccesses),
   isRestartable: z.boolean().catch(false),
-  isProtectedContent: z.boolean().catch(false),
+  hasContentProtection: z.boolean().catch(false),
   isLessonVisible: z.boolean().catch(false),
   isLessonNameVisible: z.boolean().catch(false),
   priority: z.number().catch(0),

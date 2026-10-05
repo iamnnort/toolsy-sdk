@@ -9,6 +9,7 @@ export const contentButtonSchema = entitySchema.extend({
   title: z.string().catch(''),
   url: z.string().catch(''),
   redirectUrl: z.string().catch(''),
+  joinUrl: z.string().catch(''),
   isProtectedLink: z.boolean().catch(false),
   isDirectLink: z.boolean().catch(false),
 });

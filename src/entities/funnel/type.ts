@@ -7,7 +7,7 @@ export type Funnel = Entity & {
   lifecycle: FunnelLifecycles;
   isDefault: boolean;
   isRestartable: boolean;
-  isProtectedContent: boolean;
+  hasContentProtection: boolean;
   priority: number;
   content: Content;
   project: Project;

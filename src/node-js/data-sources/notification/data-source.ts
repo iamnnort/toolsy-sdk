@@ -3,7 +3,7 @@ import { config as cfg } from '@src/config';
 import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
 import { Notification } from '@src/entities/notification/type';
-import { NotificationCreateDto, NotificationSearchDto, NotificationUpdateDto } from './dto';
+import { NotificationCreateDto, NotificationPreviewDto, NotificationSearchDto, NotificationUpdateDto } from './dto';
 
 export class NotificationDataSource extends pickRequestDataSource<
   'search' | 'get' | 'create' | 'update' | 'remove' | 'common',
@@ -24,6 +24,14 @@ export class NotificationDataSource extends pickRequestDataSource<
     return this.common<Notification>({
       method: HttpMethods.POST,
       urlParts: [id, cfg.api.endpoints.notification.copy],
+    });
+  }
+
+  preview(id: string, dto: { data: NotificationPreviewDto }) {
+    return this.common<void>({
+      ...dto,
+      method: HttpMethods.POST,
+      urlParts: [id, cfg.api.endpoints.notification.preview],
     });
   }
 }

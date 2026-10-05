@@ -21,8 +21,8 @@ export type Notification = Entity & {
   sendWindowTimeTo: string;
   sendWindowWeekdays: Weekdays[];
   priority: number;
-  isProtectedContent: boolean;
-  isLinkPreviewEnabled: boolean;
+  hasContentProtection: boolean;
+  hasLinkPreview: boolean;
   content: Content;
   product: Product;
   funnel: Funnel;

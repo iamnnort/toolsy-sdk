@@ -68,6 +68,7 @@ export const apiConfig = () => {
       notification: {
         default: 'notifications',
         copy: 'copy',
+        preview: 'preview',
       },
       accessPolicy: {
         default: 'access-policies',

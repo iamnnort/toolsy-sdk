@@ -77,12 +77,12 @@ export class NotificationEntity extends EntityEntity<Notification> {
     return NumberBuilder.make(this.entity.priority);
   }
 
-  isProtectedContent() {
-    return this.entity.isProtectedContent;
+  hasContentProtection() {
+    return this.entity.hasContentProtection;
   }
 
-  isLinkPreviewEnabled() {
-    return this.entity.isLinkPreviewEnabled;
+  hasLinkPreview() {
+    return this.entity.hasLinkPreview;
   }
 
   getProductId() {

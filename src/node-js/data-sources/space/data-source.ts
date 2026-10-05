@@ -3,13 +3,15 @@ import { config as cfg } from '@src/config';
 import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
 import { Space } from '@src/entities/space/type';
-import { SpaceSearchDto } from './dto';
+import { SpaceSearchDto, SpaceUpdateDto } from './dto';
 
 export class SpaceDataSource extends pickRequestDataSource<
-  'search' | 'get',
+  'search' | 'get' | 'update' | 'remove' | 'common',
   Space,
   { params: SpaceSearchDto },
-  PaginationResponse<Space>
+  PaginationResponse<Space>,
+  never,
+  { data: SpaceUpdateDto }
 >() {
   constructor(config: ToolsyClientConfig) {
     super({

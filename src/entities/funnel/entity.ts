@@ -28,8 +28,8 @@ export class FunnelEntity extends EntityEntity<Funnel> {
     return this.entity.isRestartable;
   }
 
-  isProtectedContent() {
-    return this.entity.isProtectedContent;
+  hasContentProtection() {
+    return this.entity.hasContentProtection;
   }
 
   getPriority() {

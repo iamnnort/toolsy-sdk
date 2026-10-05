@@ -1,9 +1,13 @@
 import { EntityDto } from '@src/types';
-import { ContentButtonEntity } from './entity';
+import { ContentButtonEntities, ContentButtonEntity } from './entity';
 import { ContentButton } from './type';
 
 export class ContentButtonBuilder {
-  static make(entity?: Partial<ContentButton>, entityDto: EntityDto = {}) {
-    return new ContentButtonEntity(entity, entityDto);
+  static make(
+    entity?: Partial<ContentButton>,
+    entityDto: EntityDto = {},
+    entities: Partial<ContentButtonEntities> = {},
+  ) {
+    return new ContentButtonEntity(entity, entityDto, entities);
   }
 }

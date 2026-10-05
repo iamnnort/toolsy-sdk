@@ -4,22 +4,32 @@ import { EntityDto } from '../type';
 import { spaceSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { ChatBuilder } from '../chat';
+import { EnumBuilder } from '../__enum';
+import { NumberBuilder } from '../__number';
 
 export class SpaceEntity extends EntityEntity<Space> {
   constructor(entity?: Partial<Space>, entityDto: EntityDto = {}) {
     super(spaceSchema, entity, entityDto);
   }
 
-  getLink() {
-    return StringBuilder.make(this.entity.link);
+  getLifecycle() {
+    return EnumBuilder.make(this.entity.lifecycle);
   }
 
-  getPublicLink() {
-    return StringBuilder.make(this.entity.publicLink);
+  getPriority() {
+    return NumberBuilder.make(this.entity.priority);
   }
 
-  isMandatorySubscription() {
-    return this.entity.isMandatorySubscription;
+  getUrl() {
+    return StringBuilder.make(this.entity.url);
+  }
+
+  getJoinUrl() {
+    return StringBuilder.make(this.entity.joinUrl);
+  }
+
+  isFollowRequired() {
+    return this.entity.isFollowRequired;
   }
 
   getChat() {

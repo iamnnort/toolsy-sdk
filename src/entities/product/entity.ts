@@ -24,8 +24,8 @@ export class ProductEntity extends EntityEntity<Product> {
     return this.entity.isRestartable;
   }
 
-  isProtectedContent() {
-    return this.entity.isProtectedContent;
+  hasContentProtection() {
+    return this.entity.hasContentProtection;
   }
 
   isLessonVisible() {

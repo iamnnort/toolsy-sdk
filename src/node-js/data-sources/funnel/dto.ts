@@ -9,7 +9,7 @@ export type FunnelSearchDto = SearchDto<Funnel, 'lifecycle'> & {
 export type FunnelCreateDto = CreateDto<
   Funnel,
   'name',
-  'lifecycle' | 'isDefault' | 'isRestartable' | 'isProtectedContent'
+  'lifecycle' | 'isDefault' | 'isRestartable' | 'hasContentProtection'
 > & {
   projectId: string;
   triggerFunnelId?: string;
@@ -17,7 +17,7 @@ export type FunnelCreateDto = CreateDto<
 
 export type FunnelUpdateDto = UpdateDto<
   Funnel,
-  'name' | 'lifecycle' | 'isDefault' | 'isRestartable' | 'isProtectedContent' | 'priority'
+  'name' | 'lifecycle' | 'isDefault' | 'isRestartable' | 'hasContentProtection' | 'priority'
 > & {
   triggerFunnelId?: string | null;
 };

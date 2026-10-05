@@ -6,7 +6,7 @@ export type Product = Entity & {
   name: string;
   access: ProductAccesses;
   isRestartable: boolean;
-  isProtectedContent: boolean;
+  hasContentProtection: boolean;
   isLessonVisible: boolean;
   isLessonNameVisible: boolean;
   priority: number;

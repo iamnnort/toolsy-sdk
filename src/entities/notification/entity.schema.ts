@@ -20,6 +20,6 @@ export const notificationSchema = entitySchema.extend({
   sendWindowTimeTo: z.string().catch(''),
   sendWindowWeekdays: z.array(z.enum(Weekdays)).catch([]),
   priority: z.number().catch(0),
-  isProtectedContent: z.boolean().catch(false),
-  isLinkPreviewEnabled: z.boolean().catch(false),
+  hasContentProtection: z.boolean().catch(false),
+  hasLinkPreview: z.boolean().catch(false),
 });

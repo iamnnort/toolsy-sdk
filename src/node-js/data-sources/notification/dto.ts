@@ -24,8 +24,8 @@ export type NotificationCreateDto = CreateDto<
   | 'sendWindowTimeFrom'
   | 'sendWindowTimeTo'
   | 'sendWindowWeekdays'
-  | 'isProtectedContent'
-  | 'isLinkPreviewEnabled'
+  | 'hasContentProtection'
+  | 'hasLinkPreview'
 > & {
   contentText?: string;
 } & (
@@ -56,6 +56,10 @@ export type NotificationUpdateDto = UpdateDto<
   | 'sendWindowTimeTo'
   | 'sendWindowWeekdays'
   | 'priority'
-  | 'isProtectedContent'
-  | 'isLinkPreviewEnabled'
+  | 'hasContentProtection'
+  | 'hasLinkPreview'
 >;
+
+export type NotificationPreviewDto = {
+  clientId: string;
+};

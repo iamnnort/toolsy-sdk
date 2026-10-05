@@ -5,10 +5,21 @@ import { contentButtonSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { EnumBuilder } from '../__enum';
 import { NumberBuilder } from '../__number';
+import { Visit } from '../visit/type';
+import { Client } from '../client/type';
 
-export class ContentButtonEntity extends EntityEntity<ContentButton> {
-  constructor(entity?: Partial<ContentButton>, entityDto: EntityDto = {}) {
-    super(contentButtonSchema, entity, entityDto);
+export type ContentButtonEntities = {
+  visit: Visit;
+  client: Client;
+};
+
+export class ContentButtonEntity extends EntityEntity<ContentButton, ContentButtonEntities> {
+  constructor(
+    entity?: Partial<ContentButton>,
+    entityDto: EntityDto = {},
+    entities: Partial<ContentButtonEntities> = {},
+  ) {
+    super(contentButtonSchema, entity, entityDto, entities as ContentButtonEntities);
   }
 
   getType() {
@@ -32,7 +43,35 @@ export class ContentButtonEntity extends EntityEntity<ContentButton> {
   }
 
   getRedirectUrl() {
+    if (this.isDirectLink()) {
+      return this.getUrl();
+    }
+
+    const { visit, client } = this.entities;
+
+    if (visit?.id) {
+      return StringBuilder.make(`${this.entity.redirectUrl}?visitId=${visit.id}`);
+    }
+
+    if (client?.id) {
+      return StringBuilder.make(`${this.entity.redirectUrl}?clientId=${client.id}`);
+    }
+
     return StringBuilder.make(this.entity.redirectUrl);
+  }
+
+  getJoinUrl() {
+    const { visit, client } = this.entities;
+
+    if (visit?.id) {
+      return StringBuilder.make(`${this.entity.joinUrl}?visitId=${visit.id}`);
+    }
+
+    if (client?.id) {
+      return StringBuilder.make(`${this.entity.joinUrl}?clientId=${client.id}`);
+    }
+
+    return StringBuilder.make(this.entity.joinUrl);
   }
 
   isProtectedLink() {

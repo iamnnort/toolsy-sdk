@@ -7,6 +7,7 @@ export type Chat = Entity & {
   provider: BotProviders;
   providerId: string;
   providerName: string;
+  providerSubscriberCount: number;
   project: Project;
 };
 

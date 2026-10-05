@@ -8,4 +8,5 @@ export const chatSchema = entitySchema.extend({
   provider: z.enum(BotProviders).catch('' as BotProviders),
   providerId: z.string().catch(''),
   providerName: z.string().catch(''),
+  providerSubscriberCount: z.number().catch(0),
 });
