@@ -10,6 +10,7 @@ export type SubscriptionPlan = Entity & {
   isInfinite: boolean;
   closesAt: string;
   subscriberLimit: number;
+  subscriberCount: number;
   interval: Intervals;
   intervalCount: number;
   retryLimit: number;

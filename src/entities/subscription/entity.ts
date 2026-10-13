@@ -25,4 +25,12 @@ export class SubscriptionEntity extends EntityEntity<Subscription> {
   getStatus() {
     return EnumBuilder.make(this.entity.status);
   }
+
+  getVisitId() {
+    return this.entity.visit?.id;
+  }
+
+  getLatestInvoiceId() {
+    return this.entity.latestInvoice?.id;
+  }
 }

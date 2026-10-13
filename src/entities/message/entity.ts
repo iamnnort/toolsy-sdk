@@ -16,4 +16,12 @@ export class MessageEntity extends EntityEntity<Message> {
   getTimezone() {
     return EnumBuilder.make(this.entity.timezone);
   }
+
+  getContentId() {
+    return this.entity.content?.id;
+  }
+
+  getVisitId() {
+    return this.entity.visit?.id;
+  }
 }

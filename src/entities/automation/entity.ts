@@ -59,4 +59,8 @@ export class AutomationEntity extends EntityEntity<Automation> {
   getActionNotification() {
     return NotificationBuilder.make(this.entity.actionNotification, this.dto);
   }
+
+  getProjectId() {
+    return this.entity.project?.id;
+  }
 }

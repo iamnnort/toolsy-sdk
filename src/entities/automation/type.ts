@@ -1,5 +1,6 @@
 import { Intervals, Weekdays } from '../../types/common';
 import { Entity } from '../__entity/type';
+import { Project } from '../project/type';
 import { Notification } from '../notification/type';
 import { Product } from '../product/type';
 
@@ -15,6 +16,7 @@ export type Automation = Entity & {
   priority: number;
   product: Product;
   actionNotification: Notification;
+  project: Project;
 };
 
 export enum AutomationEvents {

@@ -25,6 +25,7 @@ import {
   SpaceDataSource,
   SubscriptionDataSource,
   SubscriptionPlanDataSource,
+  SubscriptionPlanCycleDataSource,
   TagDataSource,
   VisitDataSource,
 } from './data-sources';
@@ -80,6 +81,8 @@ export class ToolsyClient {
 
   subscriptionPlan: SubscriptionPlanDataSource;
 
+  subscriptionPlanCycle: SubscriptionPlanCycleDataSource;
+
   tag: TagDataSource;
 
   visit: VisitDataSource;
@@ -110,6 +113,7 @@ export class ToolsyClient {
     this.space = new SpaceDataSource(config);
     this.subscription = new SubscriptionDataSource(config);
     this.subscriptionPlan = new SubscriptionPlanDataSource(config);
+    this.subscriptionPlanCycle = new SubscriptionPlanCycleDataSource(config);
     this.tag = new TagDataSource(config);
     this.visit = new VisitDataSource(config);
   }

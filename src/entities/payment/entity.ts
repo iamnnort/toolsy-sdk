@@ -38,4 +38,12 @@ export class PaymentEntity extends EntityEntity<Payment> {
   getExchangeRate() {
     return NumberBuilder.make(this.entity.exchangeRate);
   }
+
+  getCurrencyId() {
+    return this.entity.currency?.id;
+  }
+
+  getInvoiceId() {
+    return this.entity.invoice?.id;
+  }
 }

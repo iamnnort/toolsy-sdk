@@ -1,4 +1,6 @@
 import { Entity } from '../__entity/type';
+import { Currency } from '../currency/type';
+import { Invoice } from '../invoice/type';
 
 export type Payment = Entity & {
   providerToken: string;
@@ -8,6 +10,8 @@ export type Payment = Entity & {
   amountGross: number;
   amountFee: number;
   exchangeRate: number;
+  currency: Currency;
+  invoice: Invoice;
 };
 
 export enum PaymentStatuses {

@@ -1,4 +1,11 @@
 import { Entity } from '../__entity/type';
+import { Donate } from '../donate/type';
+import { Currency } from '../currency/type';
+import { PaymentSystem } from '../payment-system/type';
+import { PromoCode } from '../promo-code/type';
+import { Visit } from '../visit/type';
+import { Payment } from '../payment/type';
+import { Refund } from '../refund/type';
 import { SubscriptionPlan } from '../subscription-plan/type';
 
 export type Invoice = Entity & {
@@ -15,6 +22,15 @@ export type Invoice = Entity & {
   checkoutUrl: string;
   source: InvoiceSources;
   subscriptionPlan: SubscriptionPlan;
+  donate: Donate;
+  currency: Currency;
+  convertedCurrency: Currency;
+  discountCurrency: Currency;
+  paymentSystem: PaymentSystem;
+  promoCode: PromoCode;
+  visit: Visit;
+  latestPayment: Payment;
+  latestRefund: Refund;
 };
 
 export enum InvoiceStatuses {
@@ -33,10 +49,9 @@ export enum InvoiceStatuses {
 
 export enum InvoiceSources {
   ADMINISTRATOR = 'administrator',
-  CLIENT = 'client',
-  CLIENT_DIRECT_PRODUCT = 'client_direct_product',
-  CLIENT_DIRECT_SUBSCRIPTION_PLAN = 'client_direct_subscription_plan',
-  INVOICE = 'invoice',
+  BILLING_PLAN = 'billing_plan',
+  CONTENT_BUTTON_ACTION = 'content_button_action',
+  LINK = 'link',
   MERCHANT = 'merchant',
-  SUBSCRIPTION = 'subscription',
+  VISIT = 'visit',
 }

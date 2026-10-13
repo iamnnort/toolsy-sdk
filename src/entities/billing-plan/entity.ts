@@ -17,4 +17,20 @@ export class BillingPlanEntity extends EntityEntity<BillingPlan> {
   getBillingPlanCycleAt() {
     return DateBuilder.make(this.entity.billingPlanCycleAt, this.dto);
   }
+
+  getSubscriptionPlanId() {
+    return this.entity.subscriptionPlan?.id;
+  }
+
+  getPaymentSystemId() {
+    return this.entity.paymentSystem?.id;
+  }
+
+  getVisitId() {
+    return this.entity.visit?.id;
+  }
+
+  getBillingPlanCycleId() {
+    return this.entity.billingPlanCycle?.id;
+  }
 }

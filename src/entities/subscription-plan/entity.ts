@@ -38,6 +38,10 @@ export class SubscriptionPlanEntity extends EntityEntity<SubscriptionPlan> {
     return NumberBuilder.make(this.entity.subscriberLimit);
   }
 
+  getSubscriberCount() {
+    return NumberBuilder.make(this.entity.subscriberCount);
+  }
+
   getInterval() {
     return EnumBuilder.make(this.entity.interval);
   }

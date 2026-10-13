@@ -15,12 +15,16 @@ export const apiConfig = () => {
       },
       product: {
         default: 'products',
+        metric: 'metrics',
         copy: 'copy',
       },
       subscriptionPlan: {
         default: 'subscription-plans',
         paymentSystem: 'payment-systems',
         copy: 'copy',
+      },
+      subscriptionPlanCycle: {
+        default: 'subscription-plan-cycles',
       },
       paymentSystem: {
         default: 'payment-systems',
@@ -54,6 +58,7 @@ export const apiConfig = () => {
       funnel: {
         default: 'funnels',
         copy: 'copy',
+        preview: 'preview',
       },
       invoice: {
         default: 'invoices',

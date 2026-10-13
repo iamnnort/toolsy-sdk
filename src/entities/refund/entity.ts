@@ -26,4 +26,12 @@ export class RefundEntity extends EntityEntity<Refund> {
   getComment() {
     return StringBuilder.make(this.entity.comment);
   }
+
+  getCurrencyId() {
+    return this.entity.currency?.id;
+  }
+
+  getInvoiceId() {
+    return this.entity.invoice?.id;
+  }
 }

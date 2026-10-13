@@ -62,4 +62,40 @@ export class InvoiceEntity extends EntityEntity<Invoice> {
   getSubscriptionPlanId() {
     return this.entity.subscriptionPlan?.id;
   }
+
+  getDonateId() {
+    return this.entity.donate?.id;
+  }
+
+  getCurrencyId() {
+    return this.entity.currency?.id;
+  }
+
+  getConvertedCurrencyId() {
+    return this.entity.convertedCurrency?.id;
+  }
+
+  getDiscountCurrencyId() {
+    return this.entity.discountCurrency?.id;
+  }
+
+  getPaymentSystemId() {
+    return this.entity.paymentSystem?.id;
+  }
+
+  getPromoCodeId() {
+    return this.entity.promoCode?.id;
+  }
+
+  getVisitId() {
+    return this.entity.visit?.id;
+  }
+
+  getLatestPaymentId() {
+    return this.entity.latestPayment?.id;
+  }
+
+  getLatestRefundId() {
+    return this.entity.latestRefund?.id;
+  }
 }

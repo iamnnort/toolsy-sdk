@@ -1,5 +1,8 @@
 import { BotProviders, Languages, Timezones } from '../../types/common';
 import { Entity } from '../__entity/type';
+import { Project } from '../project/type';
+import { Client } from '../client/type';
+import { MarketingProgram } from '../marketing-program/type';
 
 export type Visit = Entity & {
   language: Languages;
@@ -8,6 +11,9 @@ export type Visit = Entity & {
   status: VisitStatuses;
   joinStatus: VisitJoinStatuses;
   email: string | null;
+  project: Project;
+  client: Client;
+  marketingProgram: MarketingProgram;
 };
 
 export enum VisitStatuses {

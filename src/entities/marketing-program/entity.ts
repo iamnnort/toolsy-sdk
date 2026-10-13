@@ -16,4 +16,8 @@ export class MarketingProgramEntity extends EntityEntity<MarketingProgram> {
   getToken() {
     return StringBuilder.make(this.entity.token);
   }
+
+  getProjectId() {
+    return this.entity.project?.id;
+  }
 }

@@ -3,6 +3,7 @@ export * from './project';
 export * from './currency';
 export * from './product';
 export * from './subscription-plan';
+export * from './subscription-plan-cycle';
 export * from './payment-system';
 export * from './billing-plan';
 export * from './client';

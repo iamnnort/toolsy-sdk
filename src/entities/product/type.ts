@@ -14,6 +14,12 @@ export type Product = Entity & {
   project: Project;
 };
 
+export type ProductMetrics = {
+  activeSubscriber: {
+    count: number;
+  };
+};
+
 export enum ProductAccesses {
   PRIVATE = 'private',
   PUBLIC = 'public',

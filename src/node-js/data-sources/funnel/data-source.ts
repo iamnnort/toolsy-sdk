@@ -3,7 +3,7 @@ import { config as cfg } from '@src/config';
 import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
 import { Funnel } from '@src/entities/funnel/type';
-import { FunnelCreateDto, FunnelSearchDto, FunnelUpdateDto } from './dto';
+import { FunnelCreateDto, FunnelPreviewDto, FunnelSearchDto, FunnelUpdateDto } from './dto';
 
 export class FunnelDataSource extends pickRequestDataSource<
   'search' | 'get' | 'create' | 'update' | 'remove' | 'common',
@@ -24,6 +24,14 @@ export class FunnelDataSource extends pickRequestDataSource<
     return this.common<Funnel>({
       method: HttpMethods.POST,
       urlParts: [id, cfg.api.endpoints.funnel.copy],
+    });
+  }
+
+  preview(id: string, dto: { data: FunnelPreviewDto }) {
+    return this.common<void>({
+      ...dto,
+      method: HttpMethods.POST,
+      urlParts: [id, cfg.api.endpoints.funnel.preview],
     });
   }
 }

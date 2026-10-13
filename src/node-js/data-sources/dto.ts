@@ -2,6 +2,7 @@ export * from './project/dto';
 export * from './currency/dto';
 export * from './product/dto';
 export * from './subscription-plan/dto';
+export * from './subscription-plan-cycle/dto';
 export * from './payment-system/dto';
 export * from './billing-plan/dto';
 export * from './client/dto';

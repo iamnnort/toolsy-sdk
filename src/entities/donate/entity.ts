@@ -7,4 +7,8 @@ export class DonateEntity extends EntityEntity<Donate> {
   constructor(entity?: Partial<Donate>, entityDto: EntityDto = {}) {
     super(donateSchema, entity, entityDto);
   }
+
+  getProjectId() {
+    return this.entity.project?.id;
+  }
 }

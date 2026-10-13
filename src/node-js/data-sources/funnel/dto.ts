@@ -21,3 +21,7 @@ export type FunnelUpdateDto = UpdateDto<
 > & {
   triggerFunnelId?: string | null;
 };
+
+export type FunnelPreviewDto = {
+  clientId: string;
+};

@@ -10,6 +10,7 @@ export const subscriptionPlanSchema = entitySchema.extend({
   isInfinite: z.boolean().catch(false),
   closesAt: z.string().catch(''),
   subscriberLimit: z.number().catch(0),
+  subscriberCount: z.number().catch(0),
   interval: z.enum(Intervals).catch('' as Intervals),
   intervalCount: z.number().catch(0),
   retryLimit: z.number().catch(0),

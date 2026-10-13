@@ -2,7 +2,7 @@ import { HttpMethods, PaginationResponse, pickRequestDataSource } from '@iamnnor
 import { config as cfg } from '@src/config';
 import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
-import { Product } from '@src/entities/product/type';
+import { Product, ProductMetrics } from '@src/entities/product/type';
 import { ProductCreateDto, ProductSearchDto, ProductUpdateDto } from './dto';
 
 export class ProductDataSource extends pickRequestDataSource<
@@ -17,6 +17,13 @@ export class ProductDataSource extends pickRequestDataSource<
     super({
       ...ToolsyClientService.getDataSourceConfig(config),
       url: cfg.api.endpoints.product.default,
+    });
+  }
+
+  getMetrics(id: string) {
+    return this.common<ProductMetrics>({
+      method: HttpMethods.GET,
+      urlParts: [id, cfg.api.endpoints.product.metric],
     });
   }
 
