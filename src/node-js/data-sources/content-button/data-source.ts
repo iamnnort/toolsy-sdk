@@ -1,8 +1,9 @@
-import { HttpMethods, PaginationResponse, pickRequestDataSource } from '@iamnnort/request';
+import { HttpMethods, PaginationDto, PaginationResponse, pickRequestDataSource } from '@iamnnort/request';
 import { config as cfg } from '@src/config';
 import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
 import { ContentButton } from '@src/entities/content-button/type';
+import { Tag } from '@src/entities/tag/type';
 import { ContentButtonCreateDto, ContentButtonSearchDto, ContentButtonSyncDto, ContentButtonUpdateDto } from './dto';
 
 export class ContentButtonDataSource extends pickRequestDataSource<
@@ -17,6 +18,14 @@ export class ContentButtonDataSource extends pickRequestDataSource<
     super({
       ...ToolsyClientService.getDataSourceConfig(config),
       url: cfg.api.endpoints.contentButton.default,
+    });
+  }
+
+  searchTags(id: string, dto: { params?: PaginationDto } = {}) {
+    return this.common<PaginationResponse<Tag>>({
+      ...dto,
+      method: HttpMethods.GET,
+      urlParts: [id, cfg.api.endpoints.contentButton.tag],
     });
   }
 

@@ -34,4 +34,6 @@ export * from './refund/type';
 export * from './space/type';
 export * from './subscription/type';
 export * from './tag/type';
+export * from './folder/type';
+export * from './link/type';
 export * from './visit/type';

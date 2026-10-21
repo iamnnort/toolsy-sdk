@@ -3,8 +3,6 @@ import { CreateDto, SearchDto, SearchField, UpdateDto } from '@src/types/dto';
 
 export type TagSearchDto = SearchDto<Tag, 'name'> & {
   projectId?: SearchField<string>;
-  contentButtonId?: SearchField<string>;
-  contentButtonActionId?: SearchField<string>;
 };
 
 export type TagCreateDto = CreateDto<Tag, 'name', never> & {

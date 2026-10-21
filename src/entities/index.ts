@@ -34,4 +34,6 @@ export * from './refund';
 export * from './space';
 export * from './subscription';
 export * from './tag';
+export * from './folder';
+export * from './link';
 export * from './visit';

@@ -1,8 +1,9 @@
-import { HttpMethods, PaginationResponse, pickRequestDataSource } from '@iamnnort/request';
+import { HttpMethods, PaginationDto, PaginationResponse, pickRequestDataSource } from '@iamnnort/request';
 import { config as cfg } from '@src/config';
 import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
 import { SubscriptionPlan } from '@src/entities/subscription-plan/type';
+import { PaymentSystem } from '@src/entities/payment-system/type';
 import {
   SubscriptionPlanCreateDto,
   SubscriptionPlanSearchDto,
@@ -29,6 +30,14 @@ export class SubscriptionPlanDataSource extends pickRequestDataSource<
     return this.common<SubscriptionPlan>({
       method: HttpMethods.POST,
       urlParts: [id, cfg.api.endpoints.subscriptionPlan.copy],
+    });
+  }
+
+  searchPaymentSystems(id: string, dto: { params?: PaginationDto } = {}) {
+    return this.common<PaginationResponse<PaymentSystem>>({
+      ...dto,
+      method: HttpMethods.GET,
+      urlParts: [id, cfg.api.endpoints.subscriptionPlan.paymentSystem],
     });
   }
 

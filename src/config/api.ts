@@ -54,9 +54,11 @@ export const apiConfig = () => {
       },
       donate: {
         default: 'donates',
+        paymentSystem: 'payment-systems',
       },
       funnel: {
         default: 'funnels',
+        metric: 'metrics',
         copy: 'copy',
         preview: 'preview',
       },
@@ -95,6 +97,13 @@ export const apiConfig = () => {
       },
       tag: {
         default: 'tags',
+      },
+      folder: {
+        default: 'folders',
+      },
+      link: {
+        default: 'links',
+        metric: 'metrics',
       },
       visit: {
         default: 'visits',

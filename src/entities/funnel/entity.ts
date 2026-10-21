@@ -6,6 +6,7 @@ import { StringBuilder } from '../__string';
 import { EnumBuilder } from '../__enum';
 import { NumberBuilder } from '../__number';
 import { ContentBuilder } from '../content';
+import { FolderBuilder } from '../folder';
 
 export class FunnelEntity extends EntityEntity<Funnel> {
   constructor(entity?: Partial<Funnel>, entityDto: EntityDto = {}) {
@@ -38,6 +39,14 @@ export class FunnelEntity extends EntityEntity<Funnel> {
 
   getProjectId() {
     return this.entity.project?.id;
+  }
+
+  getFolderId() {
+    return this.entity.folder?.id;
+  }
+
+  getFolder() {
+    return FolderBuilder.make(this.entity.folder ?? undefined);
   }
 
   getContentId() {

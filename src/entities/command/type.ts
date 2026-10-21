@@ -6,3 +6,11 @@ export type Command = Entity & {
   trigger: string;
   project: Project;
 };
+
+export enum CommandTriggers {
+  START = '/start',
+  SUBSCRIPTION = '/subscription',
+  ACCOUNT = '/account',
+  AFFILIATE = '/affiliate',
+  DONATE = '/donate',
+}

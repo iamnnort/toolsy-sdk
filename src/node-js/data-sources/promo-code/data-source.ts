@@ -1,8 +1,9 @@
-import { HttpMethods, PaginationResponse, pickRequestDataSource } from '@iamnnort/request';
+import { HttpMethods, PaginationDto, PaginationResponse, pickRequestDataSource } from '@iamnnort/request';
 import { config as cfg } from '@src/config';
 import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
 import { PromoCode, PromoCodeMetrics } from '@src/entities/promo-code/type';
+import { SubscriptionPlan } from '@src/entities/subscription-plan/type';
 import { PromoCodeCreateDto, PromoCodeSearchDto, PromoCodeSyncDto, PromoCodeUpdateDto } from './dto';
 
 export class PromoCodeDataSource extends pickRequestDataSource<
@@ -24,6 +25,14 @@ export class PromoCodeDataSource extends pickRequestDataSource<
     return this.common<PromoCodeMetrics>({
       method: HttpMethods.GET,
       urlParts: [id, cfg.api.endpoints.promoCode.metric],
+    });
+  }
+
+  searchSubscriptionPlans(id: string, dto: { params?: PaginationDto } = {}) {
+    return this.common<PaginationResponse<SubscriptionPlan>>({
+      ...dto,
+      method: HttpMethods.GET,
+      urlParts: [id, cfg.api.endpoints.promoCode.subscriptionPlan],
     });
   }
 

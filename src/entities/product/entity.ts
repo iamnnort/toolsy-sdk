@@ -6,6 +6,7 @@ import { StringBuilder } from '../__string';
 import { NumberBuilder } from '../__number';
 import { EnumBuilder } from '../__enum';
 import { ContentBuilder } from '../content';
+import { FolderBuilder } from '../folder';
 
 export class ProductEntity extends EntityEntity<Product> {
   constructor(entity?: Partial<Product>, entityDto: EntityDto = {}) {
@@ -42,6 +43,14 @@ export class ProductEntity extends EntityEntity<Product> {
 
   getProjectId() {
     return this.entity.project?.id;
+  }
+
+  getFolderId() {
+    return this.entity.folder?.id;
+  }
+
+  getFolder() {
+    return FolderBuilder.make(this.entity.folder ?? undefined);
   }
 
   getContentId() {

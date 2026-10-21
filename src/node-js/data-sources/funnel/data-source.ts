@@ -2,7 +2,7 @@ import { HttpMethods, PaginationResponse, pickRequestDataSource } from '@iamnnor
 import { config as cfg } from '@src/config';
 import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
-import { Funnel } from '@src/entities/funnel/type';
+import { Funnel, FunnelMetrics } from '@src/entities/funnel/type';
 import { FunnelCreateDto, FunnelPreviewDto, FunnelSearchDto, FunnelUpdateDto } from './dto';
 
 export class FunnelDataSource extends pickRequestDataSource<
@@ -17,6 +17,13 @@ export class FunnelDataSource extends pickRequestDataSource<
     super({
       ...ToolsyClientService.getDataSourceConfig(config),
       url: cfg.api.endpoints.funnel.default,
+    });
+  }
+
+  getMetrics(id: string) {
+    return this.common<FunnelMetrics>({
+      method: HttpMethods.GET,
+      urlParts: [id, cfg.api.endpoints.funnel.metric],
     });
   }
 

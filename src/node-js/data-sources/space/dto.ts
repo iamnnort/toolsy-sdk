@@ -7,4 +7,4 @@ export type SpaceSearchDto = SearchDto<Space> & {
   chatProvider?: SearchField<BotProviders>;
 };
 
-export type SpaceUpdateDto = UpdateDto<Space, 'isFollowRequired' | 'lifecycle' | 'priority'>;
+export type SpaceUpdateDto = UpdateDto<Space, 'isFollowRequired' | 'priority'>;

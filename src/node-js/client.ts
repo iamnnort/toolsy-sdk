@@ -27,6 +27,8 @@ import {
   SubscriptionPlanDataSource,
   SubscriptionPlanCycleDataSource,
   TagDataSource,
+  FolderDataSource,
+  LinkDataSource,
   VisitDataSource,
 } from './data-sources';
 
@@ -85,6 +87,10 @@ export class ToolsyClient {
 
   tag: TagDataSource;
 
+  folder: FolderDataSource;
+
+  link: LinkDataSource;
+
   visit: VisitDataSource;
 
   constructor(config: ToolsyClientConfig) {
@@ -115,6 +121,8 @@ export class ToolsyClient {
     this.subscriptionPlan = new SubscriptionPlanDataSource(config);
     this.subscriptionPlanCycle = new SubscriptionPlanCycleDataSource(config);
     this.tag = new TagDataSource(config);
+    this.folder = new FolderDataSource(config);
+    this.link = new LinkDataSource(config);
     this.visit = new VisitDataSource(config);
   }
 }

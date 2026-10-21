@@ -24,4 +24,6 @@ export * from './refund/dto';
 export * from './space/dto';
 export * from './subscription/dto';
 export * from './tag/dto';
+export * from './folder/dto';
+export * from './link/dto';
 export * from './visit/dto';
