@@ -8,6 +8,10 @@ export type NotificationSearchDto = SearchDto<Notification, 'type' | 'event'> & 
   extended?: boolean;
 };
 
+export type NotificationCreateContentDto = {
+  text: string;
+};
+
 export type NotificationCreateDto = CreateDto<
   Notification,
   'type' | 'name',
@@ -27,7 +31,7 @@ export type NotificationCreateDto = CreateDto<
   | 'hasContentProtection'
   | 'hasLinkPreview'
 > & {
-  contentText?: string;
+  content?: NotificationCreateContentDto;
 } & (
     | {
         productId: string;

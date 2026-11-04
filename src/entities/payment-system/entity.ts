@@ -36,6 +36,6 @@ export class PaymentSystemEntity extends EntityEntity<PaymentSystem> {
   }
 
   getContent() {
-    return ContentBuilder.make(this.entity.content);
+    return ContentBuilder.make(this.entity.content, this.dto);
   }
 }

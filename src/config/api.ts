@@ -44,6 +44,16 @@ export const apiConfig = () => {
       content: {
         default: 'contents',
       },
+      asset: {
+        default: 'assets',
+      },
+      dialog: {
+        default: 'dialogs',
+        read: 'read',
+      },
+      dialogNotification: {
+        default: 'dialog-notifications',
+      },
       contentButton: {
         default: 'content-buttons',
         tag: 'tags',

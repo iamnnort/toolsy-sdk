@@ -13,9 +13,13 @@ export type ContentButtonActionSearchDto = SearchDto<ContentButtonAction, 'type'
   tagId?: SearchField<string>;
 };
 
+export type ContentButtonActionCreateContentDto = {
+  text: string;
+};
+
 export type ContentButtonActionCreateDto = CreateDto<ContentButtonAction, 'type', 'priority'> & {
   contentButtonId: string;
-  contentText?: string;
+  content?: ContentButtonActionCreateContentDto;
   notificationId?: string | null;
   commandId?: string | null;
   subscriptionPlanId?: string | null;

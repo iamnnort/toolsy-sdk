@@ -4,6 +4,7 @@ import { EntityDto } from '../type';
 import { visitSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { EnumBuilder } from '../__enum';
+import { ClientBuilder } from '../client/builder';
 
 export class VisitEntity extends EntityEntity<Visit> {
   constructor(entity?: Partial<Visit>, entityDto: EntityDto = {}) {
@@ -36,6 +37,10 @@ export class VisitEntity extends EntityEntity<Visit> {
 
   getProjectId() {
     return this.entity.project?.id;
+  }
+
+  getClient() {
+    return ClientBuilder.make(this.entity.client, this.dto);
   }
 
   getClientId() {

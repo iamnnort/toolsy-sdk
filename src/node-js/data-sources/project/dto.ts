@@ -1,7 +1,9 @@
 import { Project } from '@src/entities/project/type';
 import { CreateDto, SearchDto, UpdateDto } from '@src/types/dto';
 
-export type ProjectSearchDto = SearchDto<Project, 'botTgId' | 'botMaxId' | 'status' | 'lifecycle'>;
+export type ProjectSearchDto = SearchDto<Project, 'botTgId' | 'botMaxId' | 'status' | 'lifecycle'> & {
+  hasWebsiteManagement?: boolean;
+};
 
 export type ProjectCreateDto = CreateDto<Project, 'name', 'lifecycle'> & {
   botTgToken?: string;

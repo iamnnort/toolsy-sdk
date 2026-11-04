@@ -20,7 +20,7 @@ export class ContentButtonActionEntity extends EntityEntity<ContentButtonAction>
   }
 
   getContent() {
-    return ContentBuilder.make(this.entity.content);
+    return ContentBuilder.make(this.entity.content, this.dto);
   }
 
   getContentId() {

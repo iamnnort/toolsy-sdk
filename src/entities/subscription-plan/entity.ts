@@ -79,7 +79,7 @@ export class SubscriptionPlanEntity extends EntityEntity<SubscriptionPlan> {
   }
 
   getCurrency() {
-    return CurrencyBuilder.make(this.entity.currency);
+    return CurrencyBuilder.make(this.entity.currency, this.dto);
   }
 
   getProductId() {
@@ -95,6 +95,6 @@ export class SubscriptionPlanEntity extends EntityEntity<SubscriptionPlan> {
   }
 
   getContent() {
-    return ContentBuilder.make(this.entity.content);
+    return ContentBuilder.make(this.entity.content, this.dto);
   }
 }

@@ -53,7 +53,7 @@ export class LinkEntity extends EntityEntity<Link> {
   }
 
   getProduct() {
-    return ProductBuilder.make(this.entity.product ?? undefined);
+    return ProductBuilder.make(this.entity.product ?? undefined, this.dto);
   }
 
   getSubscriptionPlanId() {
@@ -61,7 +61,7 @@ export class LinkEntity extends EntityEntity<Link> {
   }
 
   getSubscriptionPlan() {
-    return SubscriptionPlanBuilder.make(this.entity.subscriptionPlan ?? undefined);
+    return SubscriptionPlanBuilder.make(this.entity.subscriptionPlan ?? undefined, this.dto);
   }
 
   getFunnelId() {
@@ -69,7 +69,7 @@ export class LinkEntity extends EntityEntity<Link> {
   }
 
   getFunnel() {
-    return FunnelBuilder.make(this.entity.funnel ?? undefined);
+    return FunnelBuilder.make(this.entity.funnel ?? undefined, this.dto);
   }
 
   getPromoCodeId() {
@@ -77,6 +77,6 @@ export class LinkEntity extends EntityEntity<Link> {
   }
 
   getPromoCode() {
-    return PromoCodeBuilder.make(this.entity.promoCode ?? undefined);
+    return PromoCodeBuilder.make(this.entity.promoCode ?? undefined, this.dto);
   }
 }

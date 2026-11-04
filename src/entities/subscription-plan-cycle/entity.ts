@@ -36,7 +36,7 @@ export class SubscriptionPlanCycleEntity extends EntityEntity<SubscriptionPlanCy
   }
 
   getCurrency() {
-    return CurrencyBuilder.make(this.entity.currency);
+    return CurrencyBuilder.make(this.entity.currency, this.dto);
   }
 
   getCurrencyId() {

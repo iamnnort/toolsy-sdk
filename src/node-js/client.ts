@@ -1,5 +1,6 @@
 import { ToolsyClientConfig } from './types';
 import {
+  AssetDataSource,
   AutomationDataSource,
   BillingPlanDataSource,
   ClientDataSource,
@@ -8,6 +9,8 @@ import {
   ContentButtonDataSource,
   ContentDataSource,
   CurrencyDataSource,
+  DialogDataSource,
+  DialogNotificationDataSource,
   DonateDataSource,
   FunnelDataSource,
   InvoiceDataSource,
@@ -33,6 +36,8 @@ import {
 } from './data-sources';
 
 export class ToolsyClient {
+  asset: AssetDataSource;
+
   automation: AutomationDataSource;
 
   billingPlan: BillingPlanDataSource;
@@ -48,6 +53,10 @@ export class ToolsyClient {
   contentButtonAction: ContentButtonActionDataSource;
 
   currency: CurrencyDataSource;
+
+  dialog: DialogDataSource;
+
+  dialogNotification: DialogNotificationDataSource;
 
   donate: DonateDataSource;
 
@@ -94,6 +103,7 @@ export class ToolsyClient {
   visit: VisitDataSource;
 
   constructor(config: ToolsyClientConfig) {
+    this.asset = new AssetDataSource(config);
     this.automation = new AutomationDataSource(config);
     this.billingPlan = new BillingPlanDataSource(config);
     this.client = new ClientDataSource(config);
@@ -102,6 +112,8 @@ export class ToolsyClient {
     this.contentButton = new ContentButtonDataSource(config);
     this.contentButtonAction = new ContentButtonActionDataSource(config);
     this.currency = new CurrencyDataSource(config);
+    this.dialog = new DialogDataSource(config);
+    this.dialogNotification = new DialogNotificationDataSource(config);
     this.donate = new DonateDataSource(config);
     this.funnel = new FunnelDataSource(config);
     this.invoice = new InvoiceDataSource(config);

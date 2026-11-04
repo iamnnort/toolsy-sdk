@@ -1,6 +1,6 @@
 {
   "name": "@iamnnort/toolsy-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Toolsy SDK for Node.js, NestJS and browsers - Fast - Interactive - Simple",
   "license": "MIT",
   "repository": {

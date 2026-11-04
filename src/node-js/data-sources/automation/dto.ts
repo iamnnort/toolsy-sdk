@@ -8,6 +8,15 @@ export type AutomationSearchDto = SearchDto<Automation, 'event' | 'action' | 'li
   extended?: boolean;
 };
 
+export type AutomationCreateActionNotificationContentDto = {
+  text: string;
+};
+
+export type AutomationCreateActionNotificationDto = {
+  name: string;
+  content?: AutomationCreateActionNotificationContentDto;
+};
+
 export type AutomationCreateDto = CreateDto<
   Automation,
   'event' | 'action',
@@ -15,8 +24,7 @@ export type AutomationCreateDto = CreateDto<
 > & {
   productId: string;
   actionNotificationId?: string | null;
-  actionNotificationName?: string;
-  actionNotificationContentText?: string;
+  actionNotification?: AutomationCreateActionNotificationDto;
 };
 
 export type AutomationUpdateDto = UpdateDto<

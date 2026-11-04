@@ -20,6 +20,7 @@ export abstract class EntityEntity<T extends Entity, E extends Record<string, En
 
     this.dto = {
       timezone: entityDto.timezone || Timezones.UTC,
+      locale: entityDto.locale,
     };
   }
 
@@ -36,7 +37,7 @@ export abstract class EntityEntity<T extends Entity, E extends Record<string, En
   }
 
   hasEntity() {
-    return !isNil(this.entity.id);
+    return !isNil(this.entity.id) && this.entity.id !== '';
   }
 
   resetEntity() {

@@ -3,6 +3,21 @@ export enum BotProviders {
   TELEGRAM = 'telegram',
 }
 
+export enum MediaTypes {
+  ANIMATION = 'animation',
+  AUDIO = 'audio',
+  DOCUMENT = 'document',
+  LIVE_PHOTO = 'live_photo',
+  MEDIA_GROUP = 'media_group',
+  PHOTO = 'photo',
+  POLL = 'poll',
+  STICKER = 'sticker',
+  TEXT = 'text',
+  VIDEO = 'video',
+  VIDEO_NOTE = 'video_note',
+  VOICE = 'voice',
+}
+
 export enum Languages {
   AZ = 'az',
   DE = 'de',

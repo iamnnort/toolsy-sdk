@@ -54,7 +54,7 @@ export class PromoCodeEntity extends EntityEntity<PromoCode> {
   }
 
   getDiscountCurrency() {
-    return CurrencyBuilder.make(this.entity.discountCurrency);
+    return CurrencyBuilder.make(this.entity.discountCurrency, this.dto);
   }
 
   getDiscountCurrencyId() {

@@ -50,7 +50,7 @@ export class ProductEntity extends EntityEntity<Product> {
   }
 
   getFolder() {
-    return FolderBuilder.make(this.entity.folder ?? undefined);
+    return FolderBuilder.make(this.entity.folder ?? undefined, this.dto);
   }
 
   getContentId() {
@@ -58,6 +58,6 @@ export class ProductEntity extends EntityEntity<Product> {
   }
 
   getContent() {
-    return ContentBuilder.make(this.entity.content);
+    return ContentBuilder.make(this.entity.content, this.dto);
   }
 }

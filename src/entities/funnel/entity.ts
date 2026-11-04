@@ -46,7 +46,7 @@ export class FunnelEntity extends EntityEntity<Funnel> {
   }
 
   getFolder() {
-    return FolderBuilder.make(this.entity.folder ?? undefined);
+    return FolderBuilder.make(this.entity.folder ?? undefined, this.dto);
   }
 
   getContentId() {
@@ -54,7 +54,7 @@ export class FunnelEntity extends EntityEntity<Funnel> {
   }
 
   getContent() {
-    return ContentBuilder.make(this.entity.content);
+    return ContentBuilder.make(this.entity.content, this.dto);
   }
 
   getTriggerFunnelId() {
@@ -62,6 +62,6 @@ export class FunnelEntity extends EntityEntity<Funnel> {
   }
 
   getTriggerFunnel() {
-    return new FunnelEntity(this.entity.triggerFunnel);
+    return new FunnelEntity(this.entity.triggerFunnel, this.dto);
   }
 }

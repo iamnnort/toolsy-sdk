@@ -1,3 +1,6 @@
+export * from './asset/dto';
+export * from './dialog/dto';
+export * from './dialog-notification/dto';
 export * from './project/dto';
 export * from './currency/dto';
 export * from './product/dto';
@@ -27,3 +30,4 @@ export * from './tag/dto';
 export * from './folder/dto';
 export * from './link/dto';
 export * from './visit/dto';
+export * from './session/dto';

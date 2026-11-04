@@ -4,6 +4,7 @@ import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
 import { Client } from '@src/entities/client/type';
 import { Project } from '@src/types';
+import { SessionProjectsDto } from './dto';
 
 export class SessionDataSource extends (RequestDataSource as new (
   config: BaseRequestConfig,
@@ -21,8 +22,9 @@ export class SessionDataSource extends (RequestDataSource as new (
     });
   }
 
-  getProjects() {
+  getProjects(config: { params?: SessionProjectsDto } = {}) {
     return this.common<PaginationResponse<Project>>({
+      ...config,
       url: cfg.api.endpoints.session.project,
     });
   }

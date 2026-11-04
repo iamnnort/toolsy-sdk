@@ -98,6 +98,6 @@ export class NotificationEntity extends EntityEntity<Notification> {
   }
 
   getContent() {
-    return ContentBuilder.make(this.entity.content);
+    return ContentBuilder.make(this.entity.content, this.dto);
   }
 }
