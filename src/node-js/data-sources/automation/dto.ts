@@ -4,7 +4,7 @@ import { CreateDto, SearchDto, SearchField, UpdateDto, UpdateField } from '@src/
 export type AutomationSearchDto = SearchDto<Automation, 'event' | 'action' | 'lifecycle'> & {
   projectId?: SearchField<string>;
   productId?: SearchField<string>;
-  notificationId?: SearchField<string>;
+  actionNotificationId?: SearchField<string>;
   extended?: boolean;
 };
 

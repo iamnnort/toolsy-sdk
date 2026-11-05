@@ -6,9 +6,11 @@ export type BillingPlanSearchDto = SearchDto<BillingPlan, 'status'> & {
   productId?: SearchField<string>;
   subscriptionPlanId?: SearchField<string>;
   paymentSystemId?: SearchField<string>;
+  billingPlanCycleId?: SearchField<string>;
   promoCodeId?: SearchField<string>;
   marketingProgramId?: SearchField<string>;
   visitId?: SearchField<string>;
   clientId?: SearchField<string>;
   clientTgId?: SearchField<string>;
+  clientMaxId?: SearchField<string>;
 };

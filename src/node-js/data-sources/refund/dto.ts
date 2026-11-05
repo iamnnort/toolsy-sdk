@@ -12,4 +12,5 @@ export type RefundSearchDto = SearchDto<Refund, 'status'> & {
   visitId?: SearchField<string>;
   clientId?: SearchField<string>;
   clientTgId?: SearchField<string>;
+  clientMaxId?: SearchField<string>;
 };

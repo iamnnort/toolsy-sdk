@@ -1,7 +1,12 @@
 # output
 dist
 node_modules
+.terraform
+.turbo
 *.tsbuildinfo
+
+# env
+.env
 
 # logs
 *.log

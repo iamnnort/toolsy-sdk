@@ -5,12 +5,14 @@ export type InvoiceSearchDto = SearchDto<Invoice, 'status' | 'source'> & {
   projectId?: SearchField<string>;
   productId?: SearchField<string>;
   subscriptionPlanId?: SearchField<string>;
+  donateId?: SearchField<string>;
   paymentSystemId?: SearchField<string>;
   promoCodeId?: SearchField<string>;
   marketingProgramId?: SearchField<string>;
   visitId?: SearchField<string>;
   clientId?: SearchField<string>;
   clientTgId?: SearchField<string>;
+  clientMaxId?: SearchField<string>;
 };
 
 export type InvoiceCreateClientDto = {

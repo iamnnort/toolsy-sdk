@@ -18,7 +18,6 @@ export * from './donate';
 export * from './funnel';
 export * from './invoice';
 export * from './marketing-program';
-export * from './message';
 export * from './automation';
 export * from './notification';
 export * from './access-policy';

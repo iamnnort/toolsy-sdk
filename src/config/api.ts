@@ -79,9 +79,6 @@ export const apiConfig = () => {
       marketingProgram: {
         default: 'marketing-programs',
       },
-      message: {
-        default: 'messages',
-      },
       notification: {
         default: 'notifications',
         copy: 'copy',

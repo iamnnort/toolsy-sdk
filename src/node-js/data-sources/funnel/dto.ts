@@ -4,6 +4,7 @@ import { CreateDto, SearchDto, SearchField, UpdateDto, UpdateField } from '@src/
 export type FunnelSearchDto = SearchDto<Funnel, 'lifecycle'> & {
   projectId?: SearchField<string>;
   folderId?: SearchField<string>;
+  triggerFunnelId?: SearchField<string>;
   extended?: boolean;
 };
 

@@ -28,7 +28,6 @@ export * from './donate/type';
 export * from './funnel/type';
 export * from './invoice/type';
 export * from './marketing-program/type';
-export * from './message/type';
 export * from './notification/type';
 export * from './access-policy/type';
 export * from './payment/type';

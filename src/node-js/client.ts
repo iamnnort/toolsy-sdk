@@ -15,7 +15,6 @@ import {
   FunnelDataSource,
   InvoiceDataSource,
   MarketingProgramDataSource,
-  MessageDataSource,
   AccessPolicyDataSource,
   NotificationDataSource,
   PaymentDataSource,
@@ -65,8 +64,6 @@ export class ToolsyClient {
   invoice: InvoiceDataSource;
 
   marketingProgram: MarketingProgramDataSource;
-
-  message: MessageDataSource;
 
   notification: NotificationDataSource;
 
@@ -118,7 +115,6 @@ export class ToolsyClient {
     this.funnel = new FunnelDataSource(config);
     this.invoice = new InvoiceDataSource(config);
     this.marketingProgram = new MarketingProgramDataSource(config);
-    this.message = new MessageDataSource(config);
     this.notification = new NotificationDataSource(config);
     this.accessPolicy = new AccessPolicyDataSource(config);
     this.payment = new PaymentDataSource(config);

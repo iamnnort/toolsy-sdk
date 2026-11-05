@@ -3,6 +3,13 @@ import { SearchDto, SearchField } from '@src/types/dto';
 
 export type DialogNotificationSearchDto = SearchDto<DialogNotification, 'event' | 'status'> & {
   dialogId?: SearchField<string>;
+  projectId?: SearchField<string>;
+  visitId?: SearchField<string>;
+  marketingProgramId?: SearchField<string>;
+  clientId?: SearchField<string>;
+  clientTgId?: SearchField<string>;
+  clientMaxId?: SearchField<string>;
+  replyToDialogNotificationId?: SearchField<string>;
   extended?: boolean;
 };
 

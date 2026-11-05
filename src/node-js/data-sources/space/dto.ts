@@ -4,6 +4,7 @@ import { SearchDto, SearchField, UpdateDto } from '@src/types/dto';
 
 export type SpaceSearchDto = SearchDto<Space> & {
   projectId?: SearchField<string>;
+  chatId?: SearchField<string>;
   chatProvider?: SearchField<BotProviders>;
 };
 

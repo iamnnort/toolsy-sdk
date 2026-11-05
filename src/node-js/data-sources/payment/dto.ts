@@ -12,4 +12,5 @@ export type PaymentSearchDto = SearchDto<Payment, 'status'> & {
   visitId?: SearchField<string>;
   clientId?: SearchField<string>;
   clientTgId?: SearchField<string>;
+  clientMaxId?: SearchField<string>;
 };

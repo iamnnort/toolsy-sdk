@@ -4,6 +4,10 @@ import { CreateDto, SearchDto, SearchField, UpdateDto } from '@src/types/dto';
 export type DialogSearchDto = SearchDto<Dialog, 'lifecycle' | 'hasPin' | 'hasMute'> & {
   projectId?: SearchField<string>;
   visitId?: SearchField<string>;
+  clientId?: SearchField<string>;
+  clientTgId?: SearchField<string>;
+  clientMaxId?: SearchField<string>;
+  marketingProgramId?: SearchField<string>;
   extended?: boolean;
 };
 

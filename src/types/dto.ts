@@ -5,6 +5,11 @@ export type SearchField<T> = T | T[] | null;
 
 export type UpdateField<T> = T | null;
 
+export type SearchDateField = {
+  from?: string;
+  to?: string;
+};
+
 export type SortDto = Record<string, SortOrders>;
 
 export type PrioritySortDto = Record<string, Record<number | string, PrioritySortOrders | number>>;
