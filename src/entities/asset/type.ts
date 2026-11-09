@@ -14,6 +14,7 @@ export type Asset = Entity & {
   duration: number | null;
   mimeType: string;
   url: string;
+  html: string;
   hasSpoiler: boolean;
   hasCaption: boolean;
   content: Content;

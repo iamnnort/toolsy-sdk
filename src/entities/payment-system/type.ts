@@ -21,6 +21,7 @@ export enum PaymentSystemProviders {
   MODULBANK = 'modulbank',
   PAYKEEPER = 'paykeeper',
   PAYPAL = 'paypal',
+  PLATEGA = 'platega',
   PRODAMUS_EDUCATION_KZ = 'prodamus_education_kz',
   PRODAMUS_KZ = 'prodamus_kz',
   PRODAMUS_RU = 'prodamus_ru',
@@ -34,6 +35,7 @@ export enum PaymentSystemProviders {
   TELEGRAM_STARS = 'telegram_stars',
   TOCHKA = 'tochka',
   WAYFORPAY = 'wayforpay',
+  WEBPAY = 'webpay',
   YOOKASSA = 'yookassa',
   YOOMONEY = 'yoomoney',
 }

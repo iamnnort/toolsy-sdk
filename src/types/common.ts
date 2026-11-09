@@ -16,6 +16,7 @@ export enum MediaTypes {
   VIDEO = 'video',
   VIDEO_NOTE = 'video_note',
   VOICE = 'voice',
+  WIDGET = 'widget',
 }
 
 export enum Languages {

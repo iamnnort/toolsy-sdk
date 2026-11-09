@@ -14,6 +14,7 @@ export const assetSchema = entitySchema.extend({
   duration: z.number().nullable().catch(null),
   mimeType: z.string().catch(''),
   url: z.string().catch(''),
+  html: z.string().catch(''),
   hasSpoiler: z.boolean().catch(false),
   hasCaption: z.boolean().catch(true),
 });

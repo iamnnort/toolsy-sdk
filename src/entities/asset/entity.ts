@@ -56,6 +56,10 @@ export class AssetEntity extends EntityEntity<Asset> {
     return StringBuilder.make(this.entity.url);
   }
 
+  getHtml() {
+    return StringBuilder.make(this.entity.html);
+  }
+
   hasSpoiler() {
     return this.entity.hasSpoiler;
   }

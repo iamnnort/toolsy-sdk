@@ -8,8 +8,18 @@ export type AssetSearchDto = SearchDto<Asset, 'type' | 'provider'> & {
 
 export type AssetCreateDto = CreateDto<
   Asset,
-  'type' | 'provider' | 'providerId',
-  'name' | 'size' | 'width' | 'height' | 'duration' | 'mimeType' | 'url' | 'hasSpoiler' | 'hasCaption'
+  'type' | 'provider',
+  | 'providerId'
+  | 'name'
+  | 'size'
+  | 'width'
+  | 'height'
+  | 'duration'
+  | 'mimeType'
+  | 'url'
+  | 'html'
+  | 'hasSpoiler'
+  | 'hasCaption'
 > & {
   contentId: string;
 };
@@ -27,6 +37,7 @@ export type AssetUpdateDto = UpdateDto<
   | 'duration'
   | 'mimeType'
   | 'url'
+  | 'html'
   | 'hasSpoiler'
   | 'hasCaption'
 >;
