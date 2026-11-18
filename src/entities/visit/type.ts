@@ -11,6 +11,9 @@ export type Visit = Entity & {
   status: VisitStatuses;
   joinStatus: VisitJoinStatuses;
   email: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  phone: string | null;
   project: Project;
   client: Client;
   marketingProgram: MarketingProgram;

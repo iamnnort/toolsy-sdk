@@ -9,4 +9,7 @@ export const visitSchema = entitySchema.extend({
   status: z.enum(VisitStatuses).catch('' as VisitStatuses),
   joinStatus: z.enum(VisitJoinStatuses).catch('' as VisitJoinStatuses),
   email: z.string().nullable().catch(null),
+  firstName: z.string().nullable().catch(null),
+  lastName: z.string().nullable().catch(null),
+  phone: z.string().nullable().catch(null),
 });

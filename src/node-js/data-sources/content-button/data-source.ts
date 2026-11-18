@@ -21,19 +21,20 @@ export class ContentButtonDataSource extends pickRequestDataSource<
     });
   }
 
-  searchTags(id: string, dto: { params?: PaginationDto } = {}) {
-    return this.common<PaginationResponse<Tag>>({
-      ...dto,
-      method: HttpMethods.GET,
-      urlParts: [id, cfg.api.endpoints.contentButton.tag],
-    });
-  }
-
-  syncTags(id: string, dto: { data: ContentButtonSyncDto }) {
-    return this.common<void>({
-      ...dto,
-      method: HttpMethods.POST,
-      urlParts: [id, cfg.api.endpoints.contentButton.tag],
-    });
-  }
+  tags = {
+    search: (id: string, dto: { params?: PaginationDto } = {}) => {
+      return this.common<PaginationResponse<Tag>>({
+        ...dto,
+        method: HttpMethods.GET,
+        urlParts: [id, cfg.api.endpoints.contentButton.tag],
+      });
+    },
+    sync: (id: string, dto: { data: ContentButtonSyncDto }) => {
+      return this.common<void>({
+        ...dto,
+        method: HttpMethods.POST,
+        urlParts: [id, cfg.api.endpoints.contentButton.tag],
+      });
+    },
+  };
 }

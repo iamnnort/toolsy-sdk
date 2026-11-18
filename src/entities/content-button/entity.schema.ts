@@ -12,4 +12,5 @@ export const contentButtonSchema = entitySchema.extend({
   joinUrl: z.string().catch(''),
   isProtectedLink: z.boolean().catch(false),
   isDirectLink: z.boolean().catch(false),
+  isCorrect: z.boolean().catch(false),
 });

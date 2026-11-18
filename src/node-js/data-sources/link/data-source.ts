@@ -20,10 +20,12 @@ export class LinkDataSource extends pickRequestDataSource<
     });
   }
 
-  getMetrics(id: string) {
-    return this.common<LinkMetrics>({
-      method: HttpMethods.GET,
-      urlParts: [id, cfg.api.endpoints.link.metric],
-    });
-  }
+  metrics = {
+    get: (id: string) => {
+      return this.common<LinkMetrics>({
+        method: HttpMethods.GET,
+        urlParts: [id, cfg.api.endpoints.link.metric],
+      });
+    },
+  };
 }

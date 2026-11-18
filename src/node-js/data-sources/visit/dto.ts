@@ -10,4 +10,4 @@ export type VisitSearchDto = SearchDto<Visit, 'provider' | 'status' | 'joinStatu
   createdAt?: SearchDateField;
 };
 
-export type VisitUpdateDto = UpdateDto<Visit, 'email'>;
+export type VisitUpdateDto = UpdateDto<Visit, 'email' | 'firstName' | 'lastName' | 'phone'>;

@@ -20,19 +20,23 @@ export class PaymentSystemDataSource extends pickRequestDataSource<
     });
   }
 
-  syncSubscriptionPlans(id: string, dto: { data: PaymentSystemSyncDto }) {
-    return this.common<void>({
-      ...dto,
-      method: HttpMethods.POST,
-      urlParts: [id, cfg.api.endpoints.paymentSystem.subscriptionPlan],
-    });
-  }
+  subscriptionPlans = {
+    sync: (id: string, dto: { data: PaymentSystemSyncDto }) => {
+      return this.common<void>({
+        ...dto,
+        method: HttpMethods.POST,
+        urlParts: [id, cfg.api.endpoints.paymentSystem.subscriptionPlan],
+      });
+    },
+  };
 
-  syncDonates(id: string, dto: { data: PaymentSystemSyncDto }) {
-    return this.common<void>({
-      ...dto,
-      method: HttpMethods.POST,
-      urlParts: [id, cfg.api.endpoints.paymentSystem.donate],
-    });
-  }
+  donates = {
+    sync: (id: string, dto: { data: PaymentSystemSyncDto }) => {
+      return this.common<void>({
+        ...dto,
+        method: HttpMethods.POST,
+        urlParts: [id, cfg.api.endpoints.paymentSystem.donate],
+      });
+    },
+  };
 }

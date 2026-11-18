@@ -25,6 +25,15 @@ export type ProjectMetrics = {
   };
 };
 
+export type ProjectCounters = {
+  unreadDialog: {
+    count: number;
+  };
+  pendingTask: {
+    count: number;
+  };
+};
+
 export enum ProjectStatuses {
   ACTIVE = 'active',
   BANNED = 'banned',

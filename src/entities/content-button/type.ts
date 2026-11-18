@@ -13,9 +13,11 @@ export type ContentButton = Entity & {
   joinUrl: string;
   isProtectedLink: boolean;
   isDirectLink: boolean;
+  isCorrect: boolean;
   product: Product;
   subscriptionPlan: SubscriptionPlan;
   space: Space;
+  sourceContentButton: ContentButton;
 };
 
 export enum ContentButtonTypes {
@@ -23,6 +25,8 @@ export enum ContentButtonTypes {
   LINK = 'link',
   PAYMENT = 'payment',
   ACCESS = 'access',
+  OPTION = 'option',
+  SUBMIT = 'submit',
 }
 
 export enum ContentButtonStyles {

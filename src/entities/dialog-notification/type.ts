@@ -2,6 +2,7 @@ import { Entity } from '../__entity/type';
 import { Client } from '../client/type';
 import { Content } from '../content/type';
 import { Dialog } from '../dialog/type';
+import { QuestionAnswer } from '../question-answer/type';
 
 export type DialogNotification = Entity & {
   event: DialogNotificationEvents | null;
@@ -13,12 +14,16 @@ export type DialogNotification = Entity & {
   dialog: Dialog;
   client: Client;
   replyToDialogNotification: DialogNotification;
+  questionAnswer: QuestionAnswer | null;
 };
 
 export enum DialogNotificationEvents {
   DIALOG_ARCHIVED = 'dialog_archived',
   DIALOG_DISABLED = 'dialog_disabled',
   DIALOG_ENABLED = 'dialog_enabled',
+  TASK_ACCEPTED = 'task_accepted',
+  TASK_REJECTED = 'task_rejected',
+  TASK_SUBMITTED = 'task_submitted',
 }
 
 export enum DialogNotificationStatuses {

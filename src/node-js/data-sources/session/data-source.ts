@@ -16,16 +16,20 @@ export class SessionDataSource extends (RequestDataSource as new (
     });
   }
 
-  getMe() {
-    return this.common<Client>({
-      url: cfg.api.endpoints.session.me,
-    });
-  }
+  me = {
+    get: () => {
+      return this.common<Client>({
+        url: cfg.api.endpoints.session.me,
+      });
+    },
+  };
 
-  getProjects(config: { params?: SessionProjectsDto } = {}) {
-    return this.common<PaginationResponse<Project>>({
-      ...config,
-      url: cfg.api.endpoints.session.project,
-    });
-  }
+  projects = {
+    search: (config: { params?: SessionProjectsDto } = {}) => {
+      return this.common<PaginationResponse<Project>>({
+        ...config,
+        url: cfg.api.endpoints.session.project,
+      });
+    },
+  };
 }

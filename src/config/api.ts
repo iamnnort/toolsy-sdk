@@ -9,6 +9,7 @@ export const apiConfig = () => {
       project: {
         default: 'projects',
         metric: 'metrics',
+        counter: 'counters',
       },
       currency: {
         default: 'currencies',
@@ -53,6 +54,7 @@ export const apiConfig = () => {
       },
       dialogNotification: {
         default: 'dialog-notifications',
+        preview: 'preview',
       },
       contentButton: {
         default: 'content-buttons',
@@ -86,6 +88,18 @@ export const apiConfig = () => {
       },
       accessPolicy: {
         default: 'access-policies',
+      },
+      question: {
+        default: 'questions',
+        metric: 'metrics',
+      },
+      questionAnswer: {
+        default: 'question-answers',
+        review: 'review',
+        preview: 'preview',
+      },
+      field: {
+        default: 'fields',
       },
       payment: {
         default: 'payments',

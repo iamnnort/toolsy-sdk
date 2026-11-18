@@ -20,12 +20,14 @@ export class FunnelDataSource extends pickRequestDataSource<
     });
   }
 
-  getMetrics(id: string) {
-    return this.common<FunnelMetrics>({
-      method: HttpMethods.GET,
-      urlParts: [id, cfg.api.endpoints.funnel.metric],
-    });
-  }
+  metrics = {
+    get: (id: string) => {
+      return this.common<FunnelMetrics>({
+        method: HttpMethods.GET,
+        urlParts: [id, cfg.api.endpoints.funnel.metric],
+      });
+    },
+  };
 
   copy(id: string) {
     return this.common<Funnel>({

@@ -14,7 +14,7 @@ export type Notification = Entity & {
   period: Intervals;
   periodCount: number;
   editInterval: Intervals;
-  editIntervalCount: number;
+  editIntervalCount: number | null;
   isScheduledSkipIfOverdue: boolean;
   scheduledAt: string;
   sendWindowTimeFrom: string;
@@ -31,6 +31,10 @@ export type Notification = Entity & {
 export enum NotificationTypes {
   CHAT = 'chat',
   MESSAGE = 'message',
+  LESSON = 'lesson',
+  QUESTION = 'question',
+  POLL = 'poll',
+  TASK = 'task',
 }
 
 export enum NotificationLifecycles {
