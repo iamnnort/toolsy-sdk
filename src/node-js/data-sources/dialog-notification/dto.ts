@@ -13,6 +13,10 @@ export type DialogNotificationSearchDto = SearchDto<DialogNotification, 'event' 
   extended?: boolean;
 };
 
+export type DialogNotificationPreviewDto = {
+  clientId: string;
+};
+
 export type DialogNotificationCreateContentDto = {
   text?: string;
 };

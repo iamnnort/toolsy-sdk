@@ -16,6 +16,9 @@ import {
   InvoiceDataSource,
   MarketingProgramDataSource,
   AccessPolicyDataSource,
+  QuestionDataSource,
+  QuestionAnswerDataSource,
+  FieldDataSource,
   NotificationDataSource,
   PaymentDataSource,
   PaymentSystemDataSource,
@@ -69,6 +72,12 @@ export class ToolsyClient {
 
   accessPolicy: AccessPolicyDataSource;
 
+  question: QuestionDataSource;
+
+  questionAnswer: QuestionAnswerDataSource;
+
+  field: FieldDataSource;
+
   payment: PaymentDataSource;
 
   paymentSystem: PaymentSystemDataSource;
@@ -117,6 +126,9 @@ export class ToolsyClient {
     this.marketingProgram = new MarketingProgramDataSource(config);
     this.notification = new NotificationDataSource(config);
     this.accessPolicy = new AccessPolicyDataSource(config);
+    this.question = new QuestionDataSource(config);
+    this.questionAnswer = new QuestionAnswerDataSource(config);
+    this.field = new FieldDataSource(config);
     this.payment = new PaymentDataSource(config);
     this.paymentSystem = new PaymentSystemDataSource(config);
     this.product = new ProductDataSource(config);

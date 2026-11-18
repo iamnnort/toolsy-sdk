@@ -35,6 +35,18 @@ export class VisitEntity extends EntityEntity<Visit> {
     return StringBuilder.make(this.entity.email);
   }
 
+  getFirstName() {
+    return StringBuilder.make(this.entity.firstName);
+  }
+
+  getLastName() {
+    return StringBuilder.make(this.entity.lastName);
+  }
+
+  getPhone() {
+    return StringBuilder.make(this.entity.phone);
+  }
+
   getProjectId() {
     return this.entity.project?.id;
   }

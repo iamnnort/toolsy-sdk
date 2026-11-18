@@ -12,7 +12,7 @@ export type ContentButtonSearchDto = SearchDto<ContentButton, 'type' | 'style'> 
 export type ContentButtonCreateDto = CreateDto<
   ContentButton,
   'type' | 'title',
-  'style' | 'url' | 'isProtectedLink' | 'isDirectLink'
+  'style' | 'url' | 'isProtectedLink' | 'isDirectLink' | 'isCorrect'
 > & {
   contentId: string;
   productId?: string | null;
@@ -22,7 +22,7 @@ export type ContentButtonCreateDto = CreateDto<
 
 export type ContentButtonUpdateDto = UpdateDto<
   ContentButton,
-  'style' | 'priority' | 'title' | 'url' | 'isProtectedLink' | 'isDirectLink'
+  'style' | 'priority' | 'title' | 'url' | 'isProtectedLink' | 'isDirectLink' | 'isCorrect'
 > & {
   productId?: string | null;
   subscriptionPlanId?: string | null;

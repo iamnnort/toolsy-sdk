@@ -33,19 +33,20 @@ export class SubscriptionPlanDataSource extends pickRequestDataSource<
     });
   }
 
-  searchPaymentSystems(id: string, dto: { params?: PaginationDto } = {}) {
-    return this.common<PaginationResponse<PaymentSystem>>({
-      ...dto,
-      method: HttpMethods.GET,
-      urlParts: [id, cfg.api.endpoints.subscriptionPlan.paymentSystem],
-    });
-  }
-
-  syncPaymentSystems(id: string, dto: { data: SubscriptionPlanSyncDto }) {
-    return this.common<void>({
-      ...dto,
-      method: HttpMethods.POST,
-      urlParts: [id, cfg.api.endpoints.subscriptionPlan.paymentSystem],
-    });
-  }
+  paymentSystems = {
+    search: (id: string, dto: { params?: PaginationDto } = {}) => {
+      return this.common<PaginationResponse<PaymentSystem>>({
+        ...dto,
+        method: HttpMethods.GET,
+        urlParts: [id, cfg.api.endpoints.subscriptionPlan.paymentSystem],
+      });
+    },
+    sync: (id: string, dto: { data: SubscriptionPlanSyncDto }) => {
+      return this.common<void>({
+        ...dto,
+        method: HttpMethods.POST,
+        urlParts: [id, cfg.api.endpoints.subscriptionPlan.paymentSystem],
+      });
+    },
+  };
 }

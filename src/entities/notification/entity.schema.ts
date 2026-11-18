@@ -13,7 +13,7 @@ export const notificationSchema = entitySchema.extend({
   period: z.enum(Intervals).catch('' as Intervals),
   periodCount: z.number().catch(0),
   editInterval: z.enum(Intervals).catch('' as Intervals),
-  editIntervalCount: z.number().catch(0),
+  editIntervalCount: z.number().nullable().catch(null),
   isScheduledSkipIfOverdue: z.boolean().catch(false),
   scheduledAt: z.string().catch(''),
   sendWindowTimeFrom: z.string().catch(''),

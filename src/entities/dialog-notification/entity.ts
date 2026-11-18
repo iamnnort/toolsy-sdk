@@ -9,6 +9,7 @@ import { ContentBuilder } from '../content/builder';
 import { ClientBuilder } from '../client/builder';
 import { DialogNotificationBuilder } from './builder';
 import { DialogBuilder } from '../dialog/builder';
+import { QuestionAnswerBuilder } from '../question-answer/builder';
 
 export class DialogNotificationEntity extends EntityEntity<DialogNotification> {
   constructor(entity?: Partial<DialogNotification>, entityDto: EntityDto = {}) {
@@ -51,6 +52,10 @@ export class DialogNotificationEntity extends EntityEntity<DialogNotification> {
     return DialogNotificationBuilder.make(this.entity.replyToDialogNotification, this.dto);
   }
 
+  getQuestionAnswer() {
+    return QuestionAnswerBuilder.make(this.entity.questionAnswer ?? undefined, this.dto);
+  }
+
   getContentId() {
     return this.entity.content?.id;
   }
@@ -65,5 +70,9 @@ export class DialogNotificationEntity extends EntityEntity<DialogNotification> {
 
   getReplyToDialogNotificationId() {
     return this.entity.replyToDialogNotification?.id;
+  }
+
+  getQuestionAnswerId() {
+    return this.entity.questionAnswer?.id;
   }
 }

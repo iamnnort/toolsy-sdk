@@ -82,6 +82,10 @@ export class ContentButtonEntity extends EntityEntity<ContentButton, ContentButt
     return this.entity.isDirectLink;
   }
 
+  isCorrect() {
+    return this.entity.isCorrect;
+  }
+
   getProductId() {
     return this.entity.product?.id;
   }
@@ -92,5 +96,9 @@ export class ContentButtonEntity extends EntityEntity<ContentButton, ContentButt
 
   getSpaceId() {
     return this.entity.space?.id;
+  }
+
+  getSourceContentButtonId() {
+    return this.entity.sourceContentButton?.id;
   }
 }

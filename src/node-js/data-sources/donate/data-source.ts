@@ -19,19 +19,20 @@ export class DonateDataSource extends pickRequestDataSource<
     });
   }
 
-  searchPaymentSystems(id: string, dto: { params?: PaginationDto } = {}) {
-    return this.common<PaginationResponse<PaymentSystem>>({
-      ...dto,
-      method: HttpMethods.GET,
-      urlParts: [id, cfg.api.endpoints.donate.paymentSystem],
-    });
-  }
-
-  syncPaymentSystems(id: string, dto: { data: DonateSyncDto }) {
-    return this.common<void>({
-      ...dto,
-      method: HttpMethods.POST,
-      urlParts: [id, cfg.api.endpoints.donate.paymentSystem],
-    });
-  }
+  paymentSystems = {
+    search: (id: string, dto: { params?: PaginationDto } = {}) => {
+      return this.common<PaginationResponse<PaymentSystem>>({
+        ...dto,
+        method: HttpMethods.GET,
+        urlParts: [id, cfg.api.endpoints.donate.paymentSystem],
+      });
+    },
+    sync: (id: string, dto: { data: DonateSyncDto }) => {
+      return this.common<void>({
+        ...dto,
+        method: HttpMethods.POST,
+        urlParts: [id, cfg.api.endpoints.donate.paymentSystem],
+      });
+    },
+  };
 }

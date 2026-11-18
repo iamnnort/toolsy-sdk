@@ -20,12 +20,14 @@ export class ProductDataSource extends pickRequestDataSource<
     });
   }
 
-  getMetrics(id: string) {
-    return this.common<ProductMetrics>({
-      method: HttpMethods.GET,
-      urlParts: [id, cfg.api.endpoints.product.metric],
-    });
-  }
+  metrics = {
+    get: (id: string) => {
+      return this.common<ProductMetrics>({
+        method: HttpMethods.GET,
+        urlParts: [id, cfg.api.endpoints.product.metric],
+      });
+    },
+  };
 
   copy(id: string) {
     return this.common<Product>({

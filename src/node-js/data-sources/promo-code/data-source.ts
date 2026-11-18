@@ -21,28 +21,31 @@ export class PromoCodeDataSource extends pickRequestDataSource<
     });
   }
 
-  getMetrics(id: string) {
-    return this.common<PromoCodeMetrics>({
-      method: HttpMethods.GET,
-      urlParts: [id, cfg.api.endpoints.promoCode.metric],
-    });
-  }
+  metrics = {
+    get: (id: string) => {
+      return this.common<PromoCodeMetrics>({
+        method: HttpMethods.GET,
+        urlParts: [id, cfg.api.endpoints.promoCode.metric],
+      });
+    },
+  };
 
-  searchSubscriptionPlans(id: string, dto: { params?: PaginationDto } = {}) {
-    return this.common<PaginationResponse<SubscriptionPlan>>({
-      ...dto,
-      method: HttpMethods.GET,
-      urlParts: [id, cfg.api.endpoints.promoCode.subscriptionPlan],
-    });
-  }
-
-  syncSubscriptionPlans(id: string, dto: { data: PromoCodeSyncDto }) {
-    return this.common<void>({
-      ...dto,
-      method: HttpMethods.POST,
-      urlParts: [id, cfg.api.endpoints.promoCode.subscriptionPlan],
-    });
-  }
+  subscriptionPlans = {
+    search: (id: string, dto: { params?: PaginationDto } = {}) => {
+      return this.common<PaginationResponse<SubscriptionPlan>>({
+        ...dto,
+        method: HttpMethods.GET,
+        urlParts: [id, cfg.api.endpoints.promoCode.subscriptionPlan],
+      });
+    },
+    sync: (id: string, dto: { data: PromoCodeSyncDto }) => {
+      return this.common<void>({
+        ...dto,
+        method: HttpMethods.POST,
+        urlParts: [id, cfg.api.endpoints.promoCode.subscriptionPlan],
+      });
+    },
+  };
 
   copy(id: string) {
     return this.common<PromoCode>({
