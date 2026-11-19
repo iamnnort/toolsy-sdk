@@ -1,6 +1,6 @@
 {
   "name": "@iamnnort/toolsy-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Toolsy SDK for Node.js, NestJS and browsers - Fast - Interactive - Simple",
   "license": "MIT",
   "repository": {
@@ -81,7 +81,7 @@
   },
   "dependencies": {
     "@iamnnort/config": "^2.0.4",
-    "@iamnnort/request": "^3.2.1",
+    "@iamnnort/request": "^3.4.0",
     "big.js": "^7.0.1",
     "date-fns": "^4.4.0",
     "date-fns-tz": "^3.2.0",
