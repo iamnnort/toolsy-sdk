@@ -15,6 +15,7 @@ import { SubscriptionPlanBuilder } from '../subscription-plan/builder';
 import { VisitBuilder } from '../visit/builder';
 import { LinkBuilder } from '../link/builder';
 import { ContentButtonActionBuilder } from '../content-button-action/builder';
+import { BillingPlanBuilder } from '../billing-plan/builder';
 
 export class InvoiceEntity extends EntityEntity<Invoice> {
   constructor(entity?: Partial<Invoice>, entityDto: EntityDto = {}) {
@@ -131,6 +132,10 @@ export class InvoiceEntity extends EntityEntity<Invoice> {
 
   getVisit() {
     return VisitBuilder.make(this.entity.visit, this.dto);
+  }
+
+  getBillingPlan() {
+    return BillingPlanBuilder.make(this.entity.billingPlan, this.dto);
   }
 
   getSubscriptionPlanId() {

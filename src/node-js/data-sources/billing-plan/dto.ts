@@ -14,3 +14,7 @@ export type BillingPlanSearchDto = SearchDto<BillingPlan, 'status'> & {
   clientTgId?: SearchField<string>;
   clientMaxId?: SearchField<string>;
 };
+
+export type BillingPlanRescheduleDto = {
+  nextChargeAt: string;
+};

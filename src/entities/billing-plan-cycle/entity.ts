@@ -4,10 +4,61 @@ import { EntityDto } from '../type';
 import { billingPlanCycleSchema } from './entity.schema';
 import { NumberBuilder } from '../__number';
 import { EnumBuilder } from '../__enum';
+import { PriceBuilder } from '../__price';
+import { CurrencyBuilder } from '../currency/builder';
+import { PromoCodeBuilder } from '../promo-code/builder';
 
 export class BillingPlanCycleEntity extends EntityEntity<BillingPlanCycle> {
   constructor(entity?: Partial<BillingPlanCycle>, entityDto: EntityDto = {}) {
     super(billingPlanCycleSchema, entity, entityDto);
+  }
+
+  getPriority() {
+    return NumberBuilder.make(this.entity.priority);
+  }
+
+  getPriceAmount() {
+    return PriceBuilder.make(this.entity.price, {
+      currencyCode: this.getCurrency().getCode().getValue(),
+      currencyExp: this.getCurrency().getExp().getValue(),
+    });
+  }
+
+  getTotalAmount() {
+    return PriceBuilder.make(this.entity.totalPrice, {
+      currencyCode: this.getCurrency().getCode().getValue(),
+      currencyExp: this.getCurrency().getExp().getValue(),
+    });
+  }
+
+  getConvertedTotalAmount() {
+    return PriceBuilder.make(this.entity.convertedTotalPrice, {
+      currencyCode: this.getConvertedCurrency().getCode().getValue(),
+      currencyExp: this.getConvertedCurrency().getExp().getValue(),
+    });
+  }
+
+  getDiscount() {
+    return PriceBuilder.make(this.entity.discountAmount, {
+      currencyCode: this.getDiscountCurrency().getCode().getValue(),
+      currencyExp: this.getDiscountCurrency().getExp().getValue(),
+    });
+  }
+
+  getCurrency() {
+    return CurrencyBuilder.make(this.entity.currency, this.dto);
+  }
+
+  getConvertedCurrency() {
+    return CurrencyBuilder.make(this.entity.convertedCurrency, this.dto);
+  }
+
+  getDiscountCurrency() {
+    return CurrencyBuilder.make(this.entity.discountCurrency, this.dto);
+  }
+
+  getPromoCode() {
+    return PromoCodeBuilder.make(this.entity.promoCode, this.dto);
   }
 
   getPrice() {
@@ -34,16 +85,12 @@ export class BillingPlanCycleEntity extends EntityEntity<BillingPlanCycle> {
     return NumberBuilder.make(this.entity.intervalCount);
   }
 
-  getMaxQuantity() {
-    return NumberBuilder.make(this.entity.maxQuantity);
+  getChargeLimit() {
+    return NumberBuilder.make(this.entity.chargeLimit);
   }
 
-  isMaxQuantityInfinite() {
-    return this.entity.maxQuantityIsInfinite;
-  }
-
-  getUsedQuantity() {
-    return NumberBuilder.make(this.entity.usedQuantity);
+  getChargeCount() {
+    return NumberBuilder.make(this.entity.chargeCount);
   }
 
   getDiscountPercentage() {

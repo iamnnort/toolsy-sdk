@@ -3,6 +3,7 @@ import { SearchDto, SearchField } from '@src/types/dto';
 
 export type InvoiceSearchDto = SearchDto<Invoice, 'status' | 'source'> & {
   projectId?: SearchField<string>;
+  billingPlanId?: SearchField<string>;
   productId?: SearchField<string>;
   subscriptionPlanId?: SearchField<string>;
   donateId?: SearchField<string>;

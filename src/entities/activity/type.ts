@@ -1,4 +1,5 @@
 import { Entity } from '../__entity/type';
+import { BillingPlan } from '../billing-plan/type';
 import { Client } from '../client/type';
 import { Invoice } from '../invoice/type';
 import { Payment } from '../payment/type';
@@ -9,11 +10,14 @@ export type Activity = Entity & {
   type: ActivityTypes;
   status: string;
   prevStatus: string;
+  value: string;
+  prevValue: string;
   visit: Visit;
   client: Client;
   invoice: Invoice;
   payment: Payment;
   refund: Refund;
+  billingPlan: BillingPlan;
 };
 
 export enum ActivityTypes {
@@ -27,4 +31,8 @@ export enum ActivityTypes {
   PAYMENT_REMOVED = 'payment_removed',
   REFUND_CREATED = 'refund_created',
   REFUND_REMOVED = 'refund_removed',
+  BILLING_PLAN_CREATED = 'billing_plan_created',
+  BILLING_PLAN_STATUS_UPDATED = 'billing_plan_status_updated',
+  BILLING_PLAN_RESCHEDULED = 'billing_plan_rescheduled',
+  BILLING_PLAN_REMOVED = 'billing_plan_removed',
 }

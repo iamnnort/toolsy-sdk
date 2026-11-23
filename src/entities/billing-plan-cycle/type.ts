@@ -4,15 +4,15 @@ import { Currency } from '../currency/type';
 import { PromoCode } from '../promo-code/type';
 
 export type BillingPlanCycle = Entity & {
+  priority: number;
   price: number;
   totalPrice: number;
   convertedTotalPrice: number;
   exchangeRate: number;
   interval: Intervals;
   intervalCount: number;
-  maxQuantity: number | null;
-  maxQuantityIsInfinite: boolean;
-  usedQuantity: number;
+  chargeLimit: number | null;
+  chargeCount: number;
   discountPercentage: number;
   discountAmount: number;
   convertedDiscountAmount: number;

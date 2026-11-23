@@ -7,6 +7,7 @@ import { NumberBuilder } from '../__number';
 import { EnumBuilder } from '../__enum';
 import { PriceBuilder } from '../__price';
 import { CurrencyBuilder } from '../currency/builder';
+import { InvoiceBuilder } from '../invoice/builder';
 
 export class PaymentEntity extends EntityEntity<Payment> {
   constructor(entity?: Partial<Payment>, entityDto: EntityDto = {}) {
@@ -43,6 +44,10 @@ export class PaymentEntity extends EntityEntity<Payment> {
 
   getInvoiceId() {
     return this.entity.invoice?.id;
+  }
+
+  getInvoice() {
+    return InvoiceBuilder.make(this.entity.invoice, this.dto);
   }
 
   getCurrency() {

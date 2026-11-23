@@ -6,4 +6,6 @@ export const activitySchema = entitySchema.extend({
   type: z.enum(ActivityTypes).catch('' as ActivityTypes),
   status: z.string().catch(''),
   prevStatus: z.string().catch(''),
+  value: z.string().catch(''),
+  prevValue: z.string().catch(''),
 });

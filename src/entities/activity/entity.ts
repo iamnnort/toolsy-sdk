@@ -1,5 +1,6 @@
 import { EntityEntity } from '../__entity/entity';
 import { EntityDto } from '../type';
+import { DateBuilder } from '../__date';
 import { EnumBuilder } from '../__enum';
 import { StringBuilder } from '../__string';
 import { VisitBuilder } from '../visit/builder';
@@ -25,6 +26,22 @@ export class ActivityEntity extends EntityEntity<Activity> {
 
   getPrevStatus() {
     return StringBuilder.make(this.entity.prevStatus);
+  }
+
+  getValue() {
+    return StringBuilder.make(this.entity.value);
+  }
+
+  getPrevValue() {
+    return StringBuilder.make(this.entity.prevValue);
+  }
+
+  getValueDate() {
+    return DateBuilder.make(this.entity.value, this.dto);
+  }
+
+  getPrevValueDate() {
+    return DateBuilder.make(this.entity.prevValue, this.dto);
   }
 
   getVisit() {

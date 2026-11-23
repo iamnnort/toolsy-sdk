@@ -9,6 +9,7 @@ import { Refund } from '../refund/type';
 import { SubscriptionPlan } from '../subscription-plan/type';
 import { Link } from '../link/type';
 import { ContentButtonAction } from '../content-button-action/type';
+import { BillingPlan } from '../billing-plan/type';
 
 export type Invoice = Entity & {
   status: InvoiceStatuses;
@@ -32,6 +33,7 @@ export type Invoice = Entity & {
   paymentSystem: PaymentSystem;
   promoCode: PromoCode;
   visit: Visit;
+  billingPlan: BillingPlan;
   latestPayment: Payment;
   latestRefund: Refund;
   link: Link;

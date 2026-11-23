@@ -38,6 +38,9 @@ export const apiConfig = () => {
       },
       billingPlan: {
         default: 'billing-plans',
+        cycle: 'cycles',
+        cancel: 'cancel',
+        reschedule: 'reschedule',
       },
       command: {
         default: 'commands',

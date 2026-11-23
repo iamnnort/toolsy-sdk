@@ -6,7 +6,10 @@ import { BillingPlanCycle } from '../billing-plan-cycle/type';
 
 export type BillingPlan = Entity & {
   status: BillingPlanStatuses;
-  billingPlanCycleAt: string;
+  systemStatus: BillingPlanSystemStatuses | null;
+  retryCount: number;
+  isProviderScheduled: boolean;
+  nextChargeAt: string;
   subscriptionPlan: SubscriptionPlan;
   paymentSystem: PaymentSystem;
   visit: Visit;
@@ -14,11 +17,14 @@ export type BillingPlan = Entity & {
 };
 
 export enum BillingPlanStatuses {
+  CREATED = 'created',
   ACTIVE = 'active',
-  CANCELED = 'canceled',
-  CANCELING = 'canceling',
-  ENQUEUED = 'enqueued',
-  EXPIRED = 'expired',
   PENDING = 'pending',
-  SUSPENDED = 'suspended',
+  PAST_DUE = 'past_due',
+  EXPIRED = 'expired',
+  CANCELED = 'canceled',
+}
+
+export enum BillingPlanSystemStatuses {
+  CANCELING = 'canceling',
 }

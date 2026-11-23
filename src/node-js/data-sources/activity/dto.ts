@@ -8,4 +8,5 @@ export type ActivitySearchDto = SearchDto<Activity, 'type'> & {
   invoiceId?: SearchField<string>;
   paymentId?: SearchField<string>;
   refundId?: SearchField<string>;
+  billingPlanId?: SearchField<string>;
 };
