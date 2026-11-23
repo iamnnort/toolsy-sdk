@@ -76,7 +76,10 @@ export const apiConfig = () => {
       },
       invoice: {
         default: 'invoices',
+        cancel: 'cancel',
         pay: 'pay',
+        refund: 'refund',
+        review: 'review',
       },
       marketingProgram: {
         default: 'marketing-programs',
@@ -85,6 +88,9 @@ export const apiConfig = () => {
         default: 'notifications',
         copy: 'copy',
         preview: 'preview',
+      },
+      activity: {
+        default: 'activities',
       },
       accessPolicy: {
         default: 'access-policies',

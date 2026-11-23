@@ -14,5 +14,6 @@ export const invoiceSchema = entitySchema.extend({
   discountExchangeRate: z.number().catch(0),
   comment: z.string().catch(''),
   checkoutUrl: z.string().catch(''),
+  expiresAt: z.string().catch(''),
   source: z.enum(InvoiceSources).catch('' as InvoiceSources),
 });

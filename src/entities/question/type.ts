@@ -18,8 +18,8 @@ export type Question = Entity & {
   incorrectAnswerContent: Content;
   requestAnswerContent: Content;
   submitAnswerContent: Content;
-  field: Field | null;
-  notification: Notification | null;
+  field: Field;
+  notification: Notification;
 };
 
 export type QuestionMetrics = {

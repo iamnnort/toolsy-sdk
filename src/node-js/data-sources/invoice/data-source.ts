@@ -3,10 +3,10 @@ import { config as cfg } from '@src/config';
 import { ToolsyClientService } from '@src/node-js/service';
 import { ToolsyClientConfig } from '@src/node-js/types';
 import { Invoice } from '@src/entities/invoice/type';
-import { InvoiceCreateDto, InvoiceSearchDto } from './dto';
+import { InvoiceCreateDto, InvoiceReviewDto, InvoiceSearchDto } from './dto';
 
 export class InvoiceDataSource extends pickRequestDataSource<
-  'search' | 'get' | 'create' | 'common',
+  'search' | 'get' | 'create' | 'remove' | 'common',
   Invoice,
   { params: InvoiceSearchDto },
   PaginationResponse<Invoice>,
@@ -16,6 +16,28 @@ export class InvoiceDataSource extends pickRequestDataSource<
     super({
       ...ToolsyClientService.getDataSourceConfig(config),
       url: cfg.api.endpoints.invoice.default,
+    });
+  }
+
+  review(id: string, dto: { data: InvoiceReviewDto }) {
+    return this.common<Invoice>({
+      ...dto,
+      method: HttpMethods.POST,
+      urlParts: [id, cfg.api.endpoints.invoice.review],
+    });
+  }
+
+  cancel(id: string) {
+    return this.common<Invoice>({
+      method: HttpMethods.POST,
+      urlParts: [id, cfg.api.endpoints.invoice.cancel],
+    });
+  }
+
+  refund(id: string) {
+    return this.common<Invoice>({
+      method: HttpMethods.POST,
+      urlParts: [id, cfg.api.endpoints.invoice.refund],
     });
   }
 

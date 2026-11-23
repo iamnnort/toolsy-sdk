@@ -10,6 +10,7 @@ import { ClientBuilder } from '../client/builder';
 import { DialogNotificationBuilder } from './builder';
 import { DialogBuilder } from '../dialog/builder';
 import { QuestionAnswerBuilder } from '../question-answer/builder';
+import { InvoiceBuilder } from '../invoice/builder';
 
 export class DialogNotificationEntity extends EntityEntity<DialogNotification> {
   constructor(entity?: Partial<DialogNotification>, entityDto: EntityDto = {}) {
@@ -53,7 +54,11 @@ export class DialogNotificationEntity extends EntityEntity<DialogNotification> {
   }
 
   getQuestionAnswer() {
-    return QuestionAnswerBuilder.make(this.entity.questionAnswer ?? undefined, this.dto);
+    return QuestionAnswerBuilder.make(this.entity.questionAnswer, this.dto);
+  }
+
+  getInvoice() {
+    return InvoiceBuilder.make(this.entity.invoice, this.dto);
   }
 
   getContentId() {
@@ -74,5 +79,9 @@ export class DialogNotificationEntity extends EntityEntity<DialogNotification> {
 
   getQuestionAnswerId() {
     return this.entity.questionAnswer?.id;
+  }
+
+  getInvoiceId() {
+    return this.entity.invoice?.id;
   }
 }

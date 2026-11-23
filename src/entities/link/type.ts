@@ -13,10 +13,10 @@ export type Link = Entity & {
   webToken: string;
   usageLimit: number | null;
   expiresAt: string | null;
-  product: Product | null;
-  subscriptionPlan: SubscriptionPlan | null;
-  funnel: Funnel | null;
-  promoCode: PromoCode | null;
+  product: Product;
+  subscriptionPlan: SubscriptionPlan;
+  funnel: Funnel;
+  promoCode: PromoCode;
 };
 
 export type LinkMetrics = {

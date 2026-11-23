@@ -5,6 +5,7 @@ export * from './__price/type';
 export * from './__entity/type';
 export * from './__date/type';
 export * from './__bot-provider/type';
+export * from './activity/type';
 export * from './asset/type';
 export * from './dialog/type';
 export * from './dialog-notification/type';

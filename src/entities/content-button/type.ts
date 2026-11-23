@@ -1,4 +1,5 @@
 import { Entity } from '../__entity/type';
+import { Content } from '../content/type';
 import { Product } from '../product/type';
 import { Space } from '../space/type';
 import { SubscriptionPlan } from '../subscription-plan/type';
@@ -18,6 +19,7 @@ export type ContentButton = Entity & {
   subscriptionPlan: SubscriptionPlan;
   space: Space;
   sourceContentButton: ContentButton;
+  content: Content;
 };
 
 export enum ContentButtonTypes {

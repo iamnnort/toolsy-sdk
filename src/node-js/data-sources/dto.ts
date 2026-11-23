@@ -1,3 +1,4 @@
+export * from './activity/dto';
 export * from './asset/dto';
 export * from './dialog/dto';
 export * from './dialog-notification/dto';

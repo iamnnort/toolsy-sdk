@@ -32,6 +32,9 @@ export type ProjectCounters = {
   pendingTask: {
     count: number;
   };
+  pendingReceipt: {
+    count: number;
+  };
 };
 
 export enum ProjectStatuses {

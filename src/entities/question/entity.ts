@@ -98,10 +98,10 @@ export class QuestionEntity extends EntityEntity<Question> {
   }
 
   getField() {
-    return FieldBuilder.make(this.entity.field ?? undefined, this.dto);
+    return FieldBuilder.make(this.entity.field, this.dto);
   }
 
   getNotification() {
-    return NotificationBuilder.make(this.entity.notification ?? undefined, this.dto);
+    return NotificationBuilder.make(this.entity.notification, this.dto);
   }
 }

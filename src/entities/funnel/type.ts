@@ -13,7 +13,7 @@ export type Funnel = Entity & {
   content: Content;
   project: Project;
   triggerFunnel: Funnel;
-  folder: Folder | null;
+  folder: Folder;
 };
 
 export type FunnelMetrics = {

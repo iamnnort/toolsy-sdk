@@ -46,7 +46,7 @@ export class FunnelEntity extends EntityEntity<Funnel> {
   }
 
   getFolder() {
-    return FolderBuilder.make(this.entity.folder ?? undefined, this.dto);
+    return FolderBuilder.make(this.entity.folder, this.dto);
   }
 
   getContentId() {

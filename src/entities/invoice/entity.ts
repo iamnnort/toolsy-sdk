@@ -3,8 +3,18 @@ import { Invoice } from './type';
 import { EntityDto } from '../type';
 import { invoiceSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
+import { DateBuilder } from '../__date';
 import { NumberBuilder } from '../__number';
 import { EnumBuilder } from '../__enum';
+import { PriceBuilder } from '../__price';
+import { CurrencyBuilder } from '../currency/builder';
+import { DonateBuilder } from '../donate/builder';
+import { PaymentSystemBuilder } from '../payment-system/builder';
+import { PromoCodeBuilder } from '../promo-code/builder';
+import { SubscriptionPlanBuilder } from '../subscription-plan/builder';
+import { VisitBuilder } from '../visit/builder';
+import { LinkBuilder } from '../link/builder';
+import { ContentButtonActionBuilder } from '../content-button-action/builder';
 
 export class InvoiceEntity extends EntityEntity<Invoice> {
   constructor(entity?: Partial<Invoice>, entityDto: EntityDto = {}) {
@@ -25,6 +35,10 @@ export class InvoiceEntity extends EntityEntity<Invoice> {
 
   getConvertedTotalPrice() {
     return NumberBuilder.make(this.entity.convertedTotalPrice);
+  }
+
+  getExpiresAt() {
+    return DateBuilder.make(this.entity.expiresAt, this.dto);
   }
 
   getExchangeRate() {
@@ -57,6 +71,66 @@ export class InvoiceEntity extends EntityEntity<Invoice> {
 
   getSource() {
     return EnumBuilder.make(this.entity.source);
+  }
+
+  getPriceAmount() {
+    return PriceBuilder.make(this.entity.price, {
+      currencyCode: this.getCurrency().getCode().getValue(),
+      currencyExp: this.getCurrency().getExp().getValue(),
+    });
+  }
+
+  getTotalAmount() {
+    return PriceBuilder.make(this.entity.totalPrice, {
+      currencyCode: this.getCurrency().getCode().getValue(),
+      currencyExp: this.getCurrency().getExp().getValue(),
+    });
+  }
+
+  getConvertedTotalAmount() {
+    return PriceBuilder.make(this.entity.convertedTotalPrice, {
+      currencyCode: this.getConvertedCurrency().getCode().getValue(),
+      currencyExp: this.getConvertedCurrency().getExp().getValue(),
+    });
+  }
+
+  getConvertedCurrency() {
+    return CurrencyBuilder.make(this.entity.convertedCurrency, this.dto);
+  }
+
+  getDiscount() {
+    return PriceBuilder.make(this.entity.discountAmount, {
+      currencyCode: this.getDiscountCurrency().getCode().getValue(),
+      currencyExp: this.getDiscountCurrency().getExp().getValue(),
+    });
+  }
+
+  getDiscountCurrency() {
+    return CurrencyBuilder.make(this.entity.discountCurrency, this.dto);
+  }
+
+  getPromoCode() {
+    return PromoCodeBuilder.make(this.entity.promoCode, this.dto);
+  }
+
+  getSubscriptionPlan() {
+    return SubscriptionPlanBuilder.make(this.entity.subscriptionPlan, this.dto);
+  }
+
+  getDonate() {
+    return DonateBuilder.make(this.entity.donate, this.dto);
+  }
+
+  getCurrency() {
+    return CurrencyBuilder.make(this.entity.currency, this.dto);
+  }
+
+  getPaymentSystem() {
+    return PaymentSystemBuilder.make(this.entity.paymentSystem, this.dto);
+  }
+
+  getVisit() {
+    return VisitBuilder.make(this.entity.visit, this.dto);
   }
 
   getSubscriptionPlanId() {
@@ -97,5 +171,13 @@ export class InvoiceEntity extends EntityEntity<Invoice> {
 
   getLatestRefundId() {
     return this.entity.latestRefund?.id;
+  }
+
+  getLink() {
+    return LinkBuilder.make(this.entity.link, this.dto);
+  }
+
+  getContentButtonAction() {
+    return ContentButtonActionBuilder.make(this.entity.contentButtonAction, this.dto);
   }
 }

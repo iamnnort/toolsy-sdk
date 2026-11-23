@@ -5,6 +5,8 @@ import { paymentSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { NumberBuilder } from '../__number';
 import { EnumBuilder } from '../__enum';
+import { PriceBuilder } from '../__price';
+import { CurrencyBuilder } from '../currency/builder';
 
 export class PaymentEntity extends EntityEntity<Payment> {
   constructor(entity?: Partial<Payment>, entityDto: EntityDto = {}) {
@@ -15,12 +17,8 @@ export class PaymentEntity extends EntityEntity<Payment> {
     return StringBuilder.make(this.entity.providerToken);
   }
 
-  getSource() {
-    return EnumBuilder.make(this.entity.source);
-  }
-
-  getStatus() {
-    return EnumBuilder.make(this.entity.status);
+  getFundingSource() {
+    return EnumBuilder.make(this.entity.fundingSource);
   }
 
   getAmountNet() {
@@ -45,5 +43,30 @@ export class PaymentEntity extends EntityEntity<Payment> {
 
   getInvoiceId() {
     return this.entity.invoice?.id;
+  }
+
+  getCurrency() {
+    return CurrencyBuilder.make(this.entity.currency, this.dto);
+  }
+
+  getGrossAmount() {
+    return PriceBuilder.make(this.entity.amountGross, {
+      currencyCode: this.getCurrency().getCode().getValue(),
+      currencyExp: this.getCurrency().getExp().getValue(),
+    });
+  }
+
+  getFeeAmount() {
+    return PriceBuilder.make(this.entity.amountFee, {
+      currencyCode: this.getCurrency().getCode().getValue(),
+      currencyExp: this.getCurrency().getExp().getValue(),
+    });
+  }
+
+  getNetAmount() {
+    return PriceBuilder.make(this.entity.amountNet, {
+      currencyCode: this.getCurrency().getCode().getValue(),
+      currencyExp: this.getCurrency().getExp().getValue(),
+    });
   }
 }

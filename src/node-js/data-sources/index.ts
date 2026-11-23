@@ -1,4 +1,5 @@
 export * from './session';
+export * from './activity';
 export * from './asset';
 export * from './dialog';
 export * from './dialog-notification';

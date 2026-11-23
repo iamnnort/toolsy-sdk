@@ -13,7 +13,7 @@ export type Product = Entity & {
   priority: number;
   content: Content;
   project: Project;
-  folder: Folder | null;
+  folder: Folder;
 };
 
 export type ProductMetrics = {

@@ -10,6 +10,7 @@ export type DialogNotificationSearchDto = SearchDto<DialogNotification, 'event' 
   clientTgId?: SearchField<string>;
   clientMaxId?: SearchField<string>;
   replyToDialogNotificationId?: SearchField<string>;
+  invoiceId?: SearchField<string>;
   extended?: boolean;
 };
 

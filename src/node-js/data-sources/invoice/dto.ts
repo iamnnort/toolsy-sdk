@@ -1,4 +1,4 @@
-import { Invoice } from '@src/entities/invoice/type';
+import { Invoice, InvoiceStatuses } from '@src/entities/invoice/type';
 import { SearchDto, SearchField } from '@src/types/dto';
 
 export type InvoiceSearchDto = SearchDto<Invoice, 'status' | 'source'> & {
@@ -25,4 +25,8 @@ export type InvoiceCreateDto = {
   visitId?: string | null;
   clientId?: string | null;
   client?: InvoiceCreateClientDto;
+};
+
+export type InvoiceReviewDto = {
+  status: InvoiceStatuses.PAID | InvoiceStatuses.REJECTED;
 };

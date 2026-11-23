@@ -5,6 +5,7 @@ import { contentButtonActionSchema } from './entity.schema';
 import { ContentBuilder } from '../content';
 import { EnumBuilder } from '../__enum';
 import { NumberBuilder } from '../__number';
+import { ContentButtonBuilder } from '../content-button/builder';
 
 export class ContentButtonActionEntity extends EntityEntity<ContentButtonAction> {
   constructor(entity?: Partial<ContentButtonAction>, entityDto: EntityDto = {}) {
@@ -49,5 +50,9 @@ export class ContentButtonActionEntity extends EntityEntity<ContentButtonAction>
 
   getFunnelId() {
     return this.entity.funnel?.id;
+  }
+
+  getContentButton() {
+    return ContentButtonBuilder.make(this.entity.contentButton, this.dto);
   }
 }

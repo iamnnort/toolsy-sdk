@@ -4,7 +4,8 @@ import { EntityDto } from '../type';
 import { refundSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { NumberBuilder } from '../__number';
-import { EnumBuilder } from '../__enum';
+import { PriceBuilder } from '../__price';
+import { CurrencyBuilder } from '../currency/builder';
 
 export class RefundEntity extends EntityEntity<Refund> {
   constructor(entity?: Partial<Refund>, entityDto: EntityDto = {}) {
@@ -13,10 +14,6 @@ export class RefundEntity extends EntityEntity<Refund> {
 
   getProviderToken() {
     return StringBuilder.make(this.entity.providerToken);
-  }
-
-  getStatus() {
-    return EnumBuilder.make(this.entity.status);
   }
 
   getAmount() {
@@ -33,5 +30,16 @@ export class RefundEntity extends EntityEntity<Refund> {
 
   getInvoiceId() {
     return this.entity.invoice?.id;
+  }
+
+  getCurrency() {
+    return CurrencyBuilder.make(this.entity.currency, this.dto);
+  }
+
+  getTotalAmount() {
+    return PriceBuilder.make(this.entity.amount, {
+      currencyCode: this.getCurrency().getCode().getValue(),
+      currencyExp: this.getCurrency().getExp().getValue(),
+    });
   }
 }

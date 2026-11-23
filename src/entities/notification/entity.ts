@@ -7,6 +7,8 @@ import { NumberBuilder } from '../__number';
 import { EnumBuilder } from '../__enum';
 import { DateBuilder } from '../__date';
 import { ContentBuilder } from '../content';
+import { ProductBuilder } from '../product/builder';
+import { FunnelBuilder } from '../funnel/builder';
 
 export class NotificationEntity extends EntityEntity<Notification> {
   constructor(entity?: Partial<Notification>, entityDto: EntityDto = {}) {
@@ -99,5 +101,13 @@ export class NotificationEntity extends EntityEntity<Notification> {
 
   getContent() {
     return ContentBuilder.make(this.entity.content, this.dto);
+  }
+
+  getProduct() {
+    return ProductBuilder.make(this.entity.product, this.dto);
+  }
+
+  getFunnel() {
+    return FunnelBuilder.make(this.entity.funnel, this.dto);
   }
 }

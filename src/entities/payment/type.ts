@@ -4,8 +4,7 @@ import { Invoice } from '../invoice/type';
 
 export type Payment = Entity & {
   providerToken: string;
-  source: PaymentSources;
-  status: PaymentStatuses;
+  fundingSource: PaymentFundingSources;
   amountNet: number;
   amountGross: number;
   amountFee: number;
@@ -14,15 +13,7 @@ export type Payment = Entity & {
   invoice: Invoice;
 };
 
-export enum PaymentStatuses {
-  COMPLETED = 'completed',
-  DECLINED = 'declined',
-  FAILED = 'failed',
-  PENDING = 'pending',
-  REFUNDED = 'refunded',
-}
-
-export enum PaymentSources {
+export enum PaymentFundingSources {
   PAYMENT_SYSTEM = 'payment_system',
-  REFERRAL_PROGRAM = 'referral_program',
+  REFERRAL_PROGRAM_BALANCE = 'referral_program_balance',
 }

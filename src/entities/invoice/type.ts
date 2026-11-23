@@ -7,6 +7,8 @@ import { Visit } from '../visit/type';
 import { Payment } from '../payment/type';
 import { Refund } from '../refund/type';
 import { SubscriptionPlan } from '../subscription-plan/type';
+import { Link } from '../link/type';
+import { ContentButtonAction } from '../content-button-action/type';
 
 export type Invoice = Entity & {
   status: InvoiceStatuses;
@@ -20,6 +22,7 @@ export type Invoice = Entity & {
   discountExchangeRate: number;
   comment: string;
   checkoutUrl: string;
+  expiresAt: string;
   source: InvoiceSources;
   subscriptionPlan: SubscriptionPlan;
   donate: Donate;
@@ -31,20 +34,23 @@ export type Invoice = Entity & {
   visit: Visit;
   latestPayment: Payment;
   latestRefund: Refund;
+  link: Link;
+  contentButtonAction: ContentButtonAction;
 };
 
 export enum InvoiceStatuses {
-  ALLOCATED = 'allocated',
   CANCELED = 'canceled',
   ENQUEUED = 'enqueued',
   EXPIRED = 'expired',
+  FAILED = 'failed',
+  OPEN = 'open',
   PAID = 'paid',
   PENDING = 'pending',
+  PROCESSING = 'processing',
   REFUNDED = 'refunded',
   REJECTED = 'rejected',
-  SYSTEM_CANCELED = 'systemCanceled',
-  VIEWED = 'viewed',
-  WAITING = 'waiting',
+  REVIEWING = 'reviewing',
+  REVOKED = 'revoked',
 }
 
 export enum InvoiceSources {

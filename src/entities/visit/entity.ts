@@ -5,6 +5,7 @@ import { visitSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { EnumBuilder } from '../__enum';
 import { ClientBuilder } from '../client/builder';
+import { MarketingProgramBuilder } from '../marketing-program/builder';
 
 export class VisitEntity extends EntityEntity<Visit> {
   constructor(entity?: Partial<Visit>, entityDto: EntityDto = {}) {
@@ -57,6 +58,10 @@ export class VisitEntity extends EntityEntity<Visit> {
 
   getClientId() {
     return this.entity.client?.id;
+  }
+
+  getMarketingProgram() {
+    return MarketingProgramBuilder.make(this.entity.marketingProgram, this.dto);
   }
 
   getMarketingProgramId() {

@@ -5,6 +5,8 @@ import { contentButtonSchema } from './entity.schema';
 import { StringBuilder } from '../__string';
 import { EnumBuilder } from '../__enum';
 import { NumberBuilder } from '../__number';
+import { ContentBuilder } from '../content/builder';
+import { ContentButtonBuilder } from './builder';
 import { Visit } from '../visit/type';
 import { Client } from '../client/type';
 
@@ -100,5 +102,13 @@ export class ContentButtonEntity extends EntityEntity<ContentButton, ContentButt
 
   getSourceContentButtonId() {
     return this.entity.sourceContentButton?.id;
+  }
+
+  getContent() {
+    return ContentBuilder.make(this.entity.content, this.dto);
+  }
+
+  getSourceContentButton() {
+    return ContentButtonBuilder.make(this.entity.sourceContentButton, this.dto);
   }
 }

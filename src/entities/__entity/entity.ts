@@ -1,5 +1,6 @@
 import isNil from 'lodash/isNil.js';
 import type { ZodType } from 'zod';
+import { config as cfg } from '@src/config';
 import { Timezones } from '@src/types';
 import { Entity, EntityDto } from './type';
 import { DateBuilder } from '../__date';
@@ -26,6 +27,17 @@ export abstract class EntityEntity<T extends Entity, E extends Record<string, En
 
   getId() {
     return this.entity.id;
+  }
+
+  getShortId() {
+    const id = this.getId();
+    const { headLength, tailLength, separator } = cfg.entity.shortId;
+
+    if (id.length <= headLength + separator.length + tailLength) {
+      return id;
+    }
+
+    return `${id.slice(0, headLength)}${separator}${id.slice(-tailLength)}`;
   }
 
   getCreatedAt() {

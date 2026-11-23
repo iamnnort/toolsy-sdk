@@ -1,7 +1,7 @@
 import { Refund } from '@src/entities/refund/type';
 import { SearchDto, SearchField } from '@src/types/dto';
 
-export type RefundSearchDto = SearchDto<Refund, 'status'> & {
+export type RefundSearchDto = SearchDto<Refund> & {
   projectId?: SearchField<string>;
   invoiceId?: SearchField<string>;
   productId?: SearchField<string>;
